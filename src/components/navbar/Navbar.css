@@ -1,0 +1,56 @@
+.bg-white{
+    background-color: white !important;
+}
+
+.navbar-expand-lg{
+    height: 70px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: #1e1d6b;
+    background-image: -webkit-linear-gradient(0deg, #1e1d6b 49%,#2669bf 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+
+
+}
+
+.navbar-brand{
+    margin-right: 0;
+}
+
+.nav-link{
+    color:#1e1d6b;
+}
+
+.nav-link {
+    display: inline-block;
+    position: relative;
+    color: 
+  #1e1d6b;
+  }
+  
+  .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: 
+  #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.1s ease-out;
+  }
+  
+  .nav-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }

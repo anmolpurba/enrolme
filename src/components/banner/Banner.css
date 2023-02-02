@@ -1,0 +1,7 @@
+.banner{
+    /* background-color: black; */
+    margin-top: 1rem;
+    height:30rem;
+    background-image: url("https://images.unsplash.com/photo-1546953304-5d96f43c2e94?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGFjYWRlbWljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+    opacity: 0.7;
+}

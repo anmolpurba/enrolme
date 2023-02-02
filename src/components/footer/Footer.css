@@ -1,0 +1,12 @@
+.text-reset{
+    text-decoration: none;
+}
+
+.footer{
+    font-size: 1.2rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.d-lg-block{
+    font-weight: bold;
+}
