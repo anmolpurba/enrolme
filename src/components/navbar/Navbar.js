@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Navbar.css"
 import logo from "../images/enroll.png"
+import {Link} from "react-router-dom"
 
 function Navbar() {
   return (
@@ -19,19 +20,19 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav link-color ms-auto mb-2 mb-lg-0">
                         <li className="nav-item" >
-                            <a className="nav-link " aria-current="page" href="#">Home</a>
+                            <Link className="nav-link " aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Institutions</a>
+                            <Link className="nav-link" to="/institution">Institutions</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Courses</a>
+                            <Link className="nav-link" to="#">Courses</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">IELTS</a>
+                            <Link className="nav-link" to="#">IELTS</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Contact</a>
+                            <Link className="nav-link" to="#">Contact</Link>
                         </li>
                     </ul>
                 </div>

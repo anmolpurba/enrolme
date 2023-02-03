@@ -3,7 +3,7 @@ import "./Card.css"
 
 function Card(props) {
   return (
-    <div class="container col-md-4">
+    <div class="card col-lg-3 col-md-4">
         <div class="card">
         
         <img src={props.gif} class="card-img-top img" />
