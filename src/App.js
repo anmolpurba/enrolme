@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar';
 import healthcare from "./components/images/heartbeat.gif"
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 import Institution from './components/institutions/Institution';
+import Contact from './components/contact/Contact';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <><Navbar /> <Banner /> <Footer/></>
             } />
             <Route path="/institution" element={<> <Navbar /> <Institution /> </>} />
+            <Route path="/contact" element={<><Navbar /><Contact /></>} />
           </Routes>
         
         

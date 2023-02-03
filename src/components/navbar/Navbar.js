@@ -26,13 +26,10 @@ function Navbar() {
                             <Link className="nav-link" to="/institution">Institutions</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="#">Courses</Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link" to="#">IELTS</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="#">Contact</Link>
+                            <Link className="nav-link" to="/contact">Contact</Link>
                         </li>
                     </ul>
                 </div>
