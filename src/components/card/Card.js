@@ -7,8 +7,8 @@ function Card(props) {
         <img src={props.image} class="card-img-top" alt="..." />
         <div class="card-body">
             <h5 class="card-title">{props.title}</h5>
-            <p class="card-text">{props.text}</p>
-            <a href="#" class="btn btn-primary">Visit College Website</a>
+            <p class="card-text"><span><i class="fa-solid fa-location-dot"></i></span> {props.text}</p>
+            <a href={props.url} target="_blank" class="btn btn-primary" style={{backgroundColor:"#0087ca"}}>Visit College Website</a>
         </div>
         </div>
   )
