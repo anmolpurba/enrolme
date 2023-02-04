@@ -8,6 +8,7 @@ import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 import Institution from './components/institutions/Institution';
 import Contact from './components/contact/Contact';
 import About from './components/aboutus/About';
+import Ielts from './components/ielts/Ielts';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/institution" element={<> <Navbar /> <Institution /> </>} />
             <Route path="/contact" element={<><Navbar /><Contact /></>} />
             <Route path="/about" element={<><Navbar /><About /></>} />
+            <Route path="/ielts" element={<><Navbar /><Ielts /></>} />
           </Routes>
         
         

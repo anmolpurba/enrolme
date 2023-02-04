@@ -26,7 +26,7 @@ function Navbar() {
                             <Link className="nav-link" to="/institution">Institutions</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="#">IELTS</Link>
+                            <Link className="nav-link" to="/ielts">IELTS</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/contact">Contact</Link>
