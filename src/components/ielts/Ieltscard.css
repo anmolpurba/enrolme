@@ -1,79 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100;300;600;700&display=swap");
 
-.home .card {
-       border-radius: 40px; 
-       overflow: hidden;
-       border: 0;
-       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06),
-                   0 2px 4px rgba(0, 0, 0, 0.07);
-       transition: all 0.15s ease;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.home .card:hover {
-             box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1),
-                         0 10px 8px rgba(0, 0, 0, 0.015);
+
+.section-box .list-box {
+  display: flex;
 }
 
-.home .card-body .card-title {
-                  font-family: 'Lato', sans-serif;
-                  font-weight: 700;
-                  letter-spacing: 0.3px;
-                  font-size: 24px;
-                  color: #121212;
+.section-box {
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.home .card-text {
-             font-family: 'Lato', sans-serif;
-             font-weight: 400;
-             font-size: 15px;
-             letter-spacing: 0.3px;
-             color: #4E4E4E;
-  
+.section-box .box,
+.section-box .box::before,
+.section-box .box::after {
+  box-shadow: 0 15px 15px -15px rgba(0, 0, 0, 0.7);
 }
 
-.home .card .container {
-           width: 88%;
-          background: #F0EEF8;
-           border-radius: 30px;
-           height: 140px;
-         display: flex;
-        align-items: center;
-         justify-content: center;
+.section-box .box {
+  width: 20rem;
+  max-width: 280px;
+  cursor: pointer;
+  background-color: #543265;
+  padding: 25px 15px;
+  border-radius: 5px 25px 25px 25px;
+  position: relative;
+
+  margin: 0 15px;
+}
+/* .section-box .box::before,
+.section-box .box::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  border-radius: 25px;
+  transition: transform 0.2s linear;
+} */
+.section-box .box:hover::before,
+.section-box .box:hover::after {
+  transform: skewY(0);
+}
+.section-box .box::before {
+  transform: skewY(10deg);
+  background-color: #8147cf;
+  bottom: -20px;
+  z-index: -1;
+}
+.section-box .box::after {
+  transform: skewY(15deg);
+  background-color: #1aa5e5;
+  bottom: -35px;
+  z-index: -2;
 }
 
-.home .container:hover > img {
-                       transform: scale(1.2);
+.section-box .box.one {
+  border-top: 3px solid #da606f;
+}
+.section-box .box.two {
+  border-top: 3px solid #ff8c6c;
 }
 
-.home .container img {
-                padding: 75px;  
-               margin-top: -40px;
-               margin-bottom: -40px;
-              transition: 0.4s ease;
-              cursor: pointer;
+.section-box .top {
+  display: flex;
+  justify-content: space-between;
+}
+.section-box .box .mini-title {
+  color: #aaa;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.section-box .box .logo {
+  width: 45px;
+  border-radius: 50%;
 }
 
-.home .btn {
-      background: #EEECF7;
-      border: 0;
-      color: #5535F0;
-      width: 98%;
-      font-weight: bold;
-      border-radius: 20px;
-      height: 40px;
-      transition: all 0.2s ease;
+.section-box .box .content {
+  margin-top: 30px;
+}
+.section-box .box .big-title {
+  color: #fff;
+  font-size: 32px;
+}
+.section-box .box .text {
+  color: #eee;
+  font-size: 14px;
+  margin: 10px 0;
 }
 
-.home .btn:hover {
-            background: #441CFF;
+.section-box .box .details {
+  list-style: none;
+  margin-top: 25px;
+}
+.section-box .box .details .detail {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.section-box .box .details .detail-icon {
+  height: 30px;
+  width: 30px;
+  color: #fff;
+  background-color: #2a1035;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 10px;
+}
+.section-box .box .details .detail-name {
+  margin-left: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #eee;
 }
 
-.home .btn:focus {
-            background: #441CFF;
-            outline: 0;  
+@media screen and (max-width: 600px) {
+  .section-box {
+    height: auto;
+    padding: 50px 0;
+  }
+  .section-box .list-box {
+    flex-direction: column;
+  }
+  .section-box .list-box .box:not(:first-child) {
+    margin-top: 80px;
+  }
 }
- 
-
- 
-
- 

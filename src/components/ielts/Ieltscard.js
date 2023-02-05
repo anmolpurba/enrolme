@@ -1,23 +1,35 @@
 import React from 'react'
 import "./Ieltscard.css"
 
-function Ieltscard() {
+function Ieltscard(props) {
   return (
-    <div className='home'>
-        <div class="position-absolute top-50 start-50 translate-middle">
-  
-        <div class="animate__animated animate bounce card " style={{width: "18rem"}}>
-            <div class="container mt-3">
-            <img src="https://i.ibb.co/gRpP2Lm/icons8-online-128.png" class="card-img-top " alt="..." /></div>
-            <div class="card-body">
-            <h5 class="card-title ms-1">Website</h5>
-            <p class="card-text mb-5 ms-1">See more bootstrap code snippets on my website</p>
-        
-            <a href="https://freesnippetcode.blogspot.com/" target="_blank" class="btn btn-primary mb-1 mt-1 ">Go now</a>
+    <div className="container col-lg-3 col-md-4">
+       <section class="section-box">
+        <div class="list-box">
+          <div class="box one">
+            <div class="top">
+              <img class="logo" src={props.img} alt="logo" />
             </div>
-        </div>
+            <div class="bottom content">
+              <h2 class="big-title">
+                {props.title}
+              </h2>
+              <ul class="details">
+                <li class="detail">
+                  <i class="fas fa-download detail-icon"></i>
+                  <span class="detail-name">27 Free tutoriels</span>
+                </li>
+                <li class="detail">
+                  <i class="fas fa-file-alt detail-icon"></i>
+                  <span class="detail-name">Videos, Images, Files, PDF</span>
+                </li>
+              </ul>
             </div>
+          </div>
+          </div>
+    </section>
     </div>
+     
   )
 }
 
