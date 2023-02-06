@@ -25,10 +25,10 @@
 }
 
 .section-box .box {
-  width: 20rem;
+  width: 30rem;
   max-width: 280px;
   cursor: pointer;
-  background-color: #543265;
+  background-color: #0087ca;
   padding: 25px 15px;
   border-radius: 5px 25px 25px 25px;
   position: relative;
@@ -45,10 +45,7 @@
   border-radius: 25px;
   transition: transform 0.2s linear;
 } */
-.section-box .box:hover::before,
-.section-box .box:hover::after {
-  transform: skewY(0);
-}
+
 .section-box .box::before {
   transform: skewY(10deg);
   background-color: #8147cf;
@@ -63,11 +60,11 @@
 }
 
 .section-box .box.one {
-  border-top: 3px solid #da606f;
+  border: 3px solid #da606f;
 }
-.section-box .box.two {
+/* .section-box .box.two {
   border-top: 3px solid #ff8c6c;
-}
+} */
 
 .section-box .top {
   display: flex;

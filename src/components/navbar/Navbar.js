@@ -14,8 +14,8 @@ function Navbar() {
                         <img src={logo} alt="Bootstrap" width="80px" height="80px" />
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
                 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav link-color ms-auto mb-2 mb-lg-0">

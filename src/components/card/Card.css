@@ -9,6 +9,8 @@
 .card{
     border: 1px solid #0087ca ;
     border: none;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
 }
 
 .card-title{

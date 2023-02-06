@@ -5,6 +5,8 @@ import logo from "../images/enrollf.png"
 function Footer() {
   return (
     <div className="footer">
+        <iframe src="https://maps.google.com/maps?q=43.6568940121731, -79.59958586722138&z=15&output=embed"></iframe>
+  
         <footer class="text-center text-lg-start text-muted" >
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
@@ -48,8 +50,7 @@ function Footer() {
 
                 </h6>
                 <p>
-                    Here you can use rows and columns to organize your footer content. Lorem ipsum
-                    dolor sit amet, consectetur adipisicing elit.
+                We are a leading platform providing education abroad. We provide you the best opportunity to persue your higher studies when you join us.
                 </p>
                 </div>
                
@@ -79,7 +80,7 @@ function Footer() {
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
     
                 <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                <p><i class="fas fa-home me-3"></i> 5045 Orbitor Drive Building 8, Unit: 401, Mississauga, ON L4W 4Y4, Canada</p>
+                <p><i class="fas fa-home me-3"></i> 5045 Orbitor Dr Unit 8-401, Mississauga, ON L4W 4Y4, Canada</p>
                 <p>
                     <i class="fas fa-envelope me-3"></i>
                     Jupor@consultant.com

@@ -144,6 +144,15 @@
   }
 }
 
+@media (max-width:992px) {
+  /* .navbar{
+    margin-bottom: 600px;
+  } */
+  .navbar-collapse{
+    z-index: 1000 ;
+    background-color: beige;
+  }
+}
 
 
 /* snfsfdoianasf nafawnfznfjwkafn; */

@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Ieltscard.css"
+import {Link} from "react-router-dom"
 
 function Ieltscard(props) {
   return (
@@ -12,7 +13,7 @@ function Ieltscard(props) {
             </div>
             <div class="bottom content">
               <h2 class="big-title">
-                {props.title}
+                <Link to={props.url}>{props.title}</Link>
               </h2>
               <ul class="details">
                 <li class="detail">

@@ -68,7 +68,7 @@ function Contact() {
     
                     <h6 class="text-uppercase fw-bold mb-4" style={{fontSize:"1.3rem"}} >CANADA OFFICE</h6>
                     <class className="content" style={{fontSize:"1.1rem"}}>
-                        <p><i class="fas fa-home me-3"></i> 5045 Orbitor Drive Building 8, Unit: 401, Mississauga, ON L4W 4Y4, Canada</p>
+                        <p><i class="fas fa-home me-3"></i> 5045 Orbitor Dr Unit 8-401, Mississauga, ON L4W 4Y4, Canada</p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
                             Jupor@consultant.com

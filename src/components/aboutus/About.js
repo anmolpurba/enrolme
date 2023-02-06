@@ -9,18 +9,17 @@ function About() {
             <div class="row">
                 <div class="section-head col-sm-12">
                 <h4><span>Why Choose</span> Us?</h4>
-                <p>When you choose us, you'll feel the benefit of 10 years' experience of Web Development. Because we know the digital world and we know that how to handle it. With working knowledge of online, SEO and social media.</p>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                 <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
-                    <h6>Modern Design</h6>
-                    <p>We use latest technology for the latest world because we know the demand of peoples.</p>
+                    <h6>Modern Classes</h6>
+                    <p>We provide 1:1 interaction with students in online and offline mode.</p>
                 </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                 <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
-                    <h6>Creative Design</h6>
-                    <p>We are always creative and and always lisen our costomers and we mix these two things and make beast design.</p>
+                    <h6>Free Mock Tests</h6>
+                    <p>Mock tests can help you analyze yourself better. You can know your weak concepts, and strengths</p>
                 </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -31,14 +30,14 @@ function About() {
                 </div>
                 <div class="col-lg-4 col-sm-6">
                 <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-                    <h6>Business Growth</h6>
-                    <p>Everyone wants to live on top of the mountain, but all the happiness and growth occurs while you're climbing it</p>
+                    <h6>Flexible Schedule</h6>
+                    <p> You are free to make your own daily or weekly schedule.Also, you are free to speed up within the week when something is easy for you</p>
                 </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                 <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-                    <h6>Market Strategy</h6>
-                    <p>Holding back technology to preserve broken business models is like allowing blacksmiths to veto the internal combustion engine in order to protect their horseshoes.</p>
+                    <h6>Doubt Sessions</h6>
+                    <p>A doubt clearing session will save you time as you can get clarity about concepts, formulas, etc. This is also an excellent way to learn several problem-solving methods, shortcuts, and tricks to approach a particular question.</p>
                 </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
