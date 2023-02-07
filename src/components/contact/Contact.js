@@ -6,7 +6,7 @@ function Contact() {
     <div>
         <div class="formbold-main-wrapper">
             <div class="formbold-form-wrapper">
-                <form action="https://formsubmit.co/4b295ea95bc275b1e1b804da1143f678" method="POST">
+                <form action="https://formsubmit.co/3a095c96b93b47c9dbe91bc68e646084" method="POST">
                 <div className="title" style={{display:"flex",alignItems:"center",justifyContent:"center",marginBottom:"2rem"}}>
                     <h1>Contact Us</h1>
                 </div>

@@ -58,7 +58,7 @@ function Footer() {
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
       
                 <h6 class="text-uppercase mb-4" style={{fontWeight:"bold"}}>
-                    Products
+                    Services
                 </h6>
                 <p>
                     IELTS
