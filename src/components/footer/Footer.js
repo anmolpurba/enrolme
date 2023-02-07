@@ -17,20 +17,14 @@ function Footer() {
 
       
             <div>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
+                <a href="https://goo.gl/maps/ygM4oHgCTapMuzhN6" target="_blank" class="me-4 text-reset">
                     <i class="fab fa-google"></i>
                 </a>
-                <a href="" class="me-4 text-reset">
+                <a href="https://www.instagram.com/enrolme.io/" target="_blank" class="me-4 text-reset">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-linkedin"></i>
+                <a href="https://www.instagram.com/enrolme_ielts/?hl=en" target="_blank" class="me-4 text-reset">
+                    <i class="fa-brands fa-instagram"></i>
                 </a>
             </div>
   
