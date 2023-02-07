@@ -8,6 +8,11 @@
   z-index: 1;
   margin-top: 5rem;
 }
+
+/* .practice{
+  height: 35rem;
+} */
+
 @media (min-width: 768px) {
   .upper .banner {
     height: 450px;
@@ -23,8 +28,9 @@
   top: 0px;
   height: 300px;
   z-index: -1;
-  -webkit-filter: drop-shadow(0 3rem 0.05rem rgba(191, 216, 255, 1));
-  filter: drop-shadow(0 3rem 0.05rem rgba(191, 216, 255, 1));
+  width: 40rem;
+  /* -webkit-filter: drop-shadow(0 3rem 0.05rem rgba(191, 216, 255, 1)); */
+  /* filter: drop-shadow(0 3rem 0.05rem rgba(191, 216, 255, 1)); */
 }
 @media (min-width: 768px) {
   .upper .banner .banner-image {

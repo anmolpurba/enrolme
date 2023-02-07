@@ -43,7 +43,7 @@ function About() {
                 <div class="col-lg-4 col-sm-6">
                 <div class="item"> <span class="icon feature_box_col_six"><i class="fa-solid fa-plane"></i></span>
                     <h6>Affordable cost</h6>
-                    <p>Love is a special word, and I use it only when I mean it. You say the word too much and it becomes cheap.</p>
+                    <p>Open and affordable course markings are grounded in the idea of transparently communicating course material costs to students so they can make informed decisions when enrolling in classes.</p>
                 </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ function Banner() {
           <p>Enrolme is a global education platform, which will help you to nurture your future at a top ranked university abroad with an affordable and flexible way to explore your academic options. </p>
         </div>
       </div>
-      <img class="banner-image" src="https://img.freepik.com/free-vector/study-abroad-concept-illustration_114360-7493.jpg?w=1060&t=st=1675754934~exp=1675755534~hmac=16342d0d1654ff48828afcd1b4a037fbd866435de68821224b7da9ed89d9bbf2" alt="monitoring" />
+      <img class="banner-image" src="https://img.freepik.com/free-vector/study-abroad-concept-illustration_114360-7743.jpg?w=2000" alt="monitoring" />
     </section><div class="container">
         <div class="row">
           <div class="mb-30 col-md-6 col-lg-4">
