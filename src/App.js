@@ -1,9 +1,7 @@
 import './App.css';
 import Banner from './components/banner/Banner';
-import Card from './components/card/Card';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
-import healthcare from "./components/images/heartbeat.gif"
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 import Institution from './components/institutions/Institution';
 import Contact from './components/contact/Contact';

@@ -59,7 +59,7 @@ function Contact() {
 
         <div className="footer">
         <footer class="text-center text-lg-start text-muted" >
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <section class="row d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
                
               
 
@@ -71,9 +71,9 @@ function Contact() {
                         <p><i class="fas fa-home me-3"></i> 5045 Orbitor Dr Unit 8-401, Mississauga, ON L4W 4Y4, Canada</p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            Jupor@consultant.com
+                            <a href = "mailto: abc@example.com">info@jupor.in</a>
                         </p>
-                        <p><i class="fas fa-phone me-3"></i> +91 99999-99999</p>
+                        <p><i class="fas fa-phone me-3"></i> +1 (647) 821-1244</p>
                     </class>
                     
                 </div>
@@ -85,7 +85,7 @@ function Contact() {
                         <p><i class="fas fa-home me-3"></i> SCO:142-143, 5th Floor, JUPOR Group Building, D - Block, Ranjit Avenue, Amritsar, Punjab 143001</p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            Jupor@consultant.com
+                            <a href = "mailto: abc@example.com">info@jupor.in</a>
                         </p>
                         <p><i class="fas fa-phone me-3"></i> +91 77105 00044</p>
                     </div>

@@ -6,14 +6,16 @@
   width: 100%;
   position: relative;
   z-index: 1;
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 @media (min-width: 768px) {
   .upper .banner {
     height: 450px;
-    margin-bottom: 32px;
+    margin-bottom: 55px;
  }
 }
+
+
 .upper .banner .banner-image {
   position: absolute;
   opacity: 0.25;

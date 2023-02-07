@@ -120,7 +120,7 @@
   color: #eee;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .section-box {
     height: auto;
     padding: 50px 0;
@@ -131,4 +131,4 @@
   .section-box .list-box .box:not(:first-child) {
     margin-top: 80px;
   }
-}
+} */

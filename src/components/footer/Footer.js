@@ -5,7 +5,7 @@ import logo from "../images/enrollf.png"
 function Footer() {
   return (
     <div className="footer">
-        <iframe src="https://maps.google.com/maps?q=43.6568940121731, -79.59958586722138&z=15&output=embed"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d180.41137471269607!2d-79.59965359299473!3d43.65686441889167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b39aa44058f67%3A0xa3980656f62787ef!2sEnrol%20Me%20Education!5e0!3m2!1sen!2sin!4v1675685619695!5m2!1sen!2sin" width="600" height="450" style={{border:"0"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   
         <footer class="text-center text-lg-start text-muted" >
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -61,16 +61,16 @@ function Footer() {
                     Products
                 </h6>
                 <p>
-                    <a href="https://jupor.in/" class="text-reset">Jupor</a>
+                    IELTS
+                </p>
+                <p>  
+                    Course Change
                 </p>
                 <p>
-                    <a href="#!" class="text-reset">Workly</a>
+                    2nd Year Admission
                 </p>
                 <p>
-                    <a href="#!" class="text-reset">Buisnessblvd</a>
-                </p>
-                <p>
-                    <a href="#!" class="text-reset">Enrolme</a>
+                    College Change
                 </p>
                 </div>
                
@@ -83,9 +83,9 @@ function Footer() {
                 <p><i class="fas fa-home me-3"></i> 5045 Orbitor Dr Unit 8-401, Mississauga, ON L4W 4Y4, Canada</p>
                 <p>
                     <i class="fas fa-envelope me-3"></i>
-                    Jupor@consultant.com
+                    <a href = "mailto: abc@example.com">info@jupor.in</a>
                 </p>
-                <p><i class="fas fa-phone me-3"></i> +91 99999-99999</p>
+                <p><i class="fas fa-phone me-3"></i> +1 (647) 821-1244</p>
                 </div>
               
             </div>
