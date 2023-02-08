@@ -18,7 +18,7 @@ function Ieltscard(props) {
               <ul class="details">
                 <li class="detail">
                   <i class="fas fa-download detail-icon"></i>
-                  <span class="detail-name">27 Free tutoriels</span>
+                  <span class="detail-name">27 Free tutorials</span>
                 </li>
                 <li class="detail">
                   <i class="fas fa-file-alt detail-icon"></i>

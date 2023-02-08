@@ -7,7 +7,7 @@ function Banner() {
     <section class="banner">
       <div class="container">
         <div class="banner-text">
-          <h1>Enrol in Enrolme</h1>
+          <h1>Enrol with Enrolme</h1>
           <p>Enrolme is a global education platform, which will help you to nurture your future at a top ranked university abroad with an affordable and flexible way to explore your academic options. </p>
         </div>
       </div>

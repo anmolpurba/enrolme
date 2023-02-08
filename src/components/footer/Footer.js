@@ -17,9 +17,9 @@ function Footer() {
 
       
             <div>
-                <a href="https://goo.gl/maps/ygM4oHgCTapMuzhN6" target="_blank" class="me-4 text-reset">
+                {/* <a href="https://goo.gl/maps/ygM4oHgCTapMuzhN6" target="_blank" class="me-4 text-reset">
                     <i class="fab fa-google"></i>
-                </a>
+                </a> */}
                 <a href="https://www.instagram.com/enrolme.io/" target="_blank" class="me-4 text-reset">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
@@ -77,7 +77,7 @@ function Footer() {
                 <p><i class="fas fa-home me-3"></i> 5045 Orbitor Dr Unit 8-401, Mississauga, ON L4W 4Y4, Canada</p>
                 <p>
                     <i class="fas fa-envelope me-3"></i>
-                    <a href = "mailto: abc@example.com">info@jupor.in</a>
+                    <a href = "mailto: info@enrolme.in">info@enrolme.in</a>
                 </p>
                 <p><i class="fas fa-phone me-3"></i> +1 (647) 821-1244</p>
                 </div>
@@ -90,8 +90,8 @@ function Footer() {
 
      
         <div class="text-center p-4 footerbottom" style={{backgroundColor: "white"}}>
-            © 2023 Copyright:
-            <a class="text-reset fw-bold">Enrolme</a>
+            © 2023 Copyright: 
+            <a class="text-reset fw-bold" style={{color:"#1e1d6b"}}> Enrolme</a>
         </div>
       
         </footer>
