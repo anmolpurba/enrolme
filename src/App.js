@@ -11,6 +11,8 @@ import Reading from './ieltsdetail/reading/Reading.js';
 import Listening from "./ieltsdetail/listening/Listening.js";
 import Speaking from "./ieltsdetail/speaking/Speaking.js";
 import Writing from "./ieltsdetail/writing/Writing.js";
+import Signup from './components/signup/Signup';
+import Signin from './components/signin/Signin';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route path="/listening" element={<><Navbar /> <Listening /> </>} />
             <Route path="/speaking" element={<><Navbar /> <Speaking /> </>} />
             <Route path="/writing" element={<><Navbar /> <Writing /> </>} />
+            <Route path="/signup" element={<> <Navbar/> <Signup/> </>} />
+            <Route path="/signin" element={<> <Navbar/> <Signin/> </>} />
           </Routes>
         
         
