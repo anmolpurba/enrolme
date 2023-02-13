@@ -1,6 +1,9 @@
 import {React,useState} from 'react'
 import "./Signup.css"
 import Axios from "axios"
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 function Signup() {
 
@@ -20,11 +23,19 @@ function Signup() {
         .then(response => {
             // Handle success.
             console.log('Well done!');
+            toast.success("You have Successfully registered!", {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose:1300
+            });
             console.log('User profile', response.data.user);
             console.log('User token', response.data.jwt);
         })
         .catch(error => {
             // Handle error.
+            toast.error("Veer Dubara ni register karna",{
+                position: toast.POSITION.TOP_CENTER,
+                autoClose:1300
+            })
             console.log('An error occurred:', error.response);
         });
     }
@@ -32,6 +43,7 @@ function Signup() {
   return (
     <div className='signup'>
         <section class="vh-100">
+        <ToastContainer />
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-11">

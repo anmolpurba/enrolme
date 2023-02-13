@@ -13,7 +13,7 @@ import Speaking from "./ieltsdetail/speaking/Speaking.js";
 import Writing from "./ieltsdetail/writing/Writing.js";
 import Signup from './components/signup/Signup';
 import Signin from './components/signin/Signin';
-import Ieltsmodule from './components/dashboard/Dashboard';
+// import Ieltsmodule from './components/dashboard/Dashboard';
 import Protectedroute from './components/protected/Protectedroute';
 import Dashboard from "./components/dashboard/Dashboard"
 

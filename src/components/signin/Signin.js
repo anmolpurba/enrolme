@@ -1,9 +1,12 @@
-import {React,useState} from 'react'
+import {React,useState,useEffect} from 'react'
 import Axios from "axios"
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate,useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 function Signin() {
-
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -15,19 +18,45 @@ function Signin() {
             password: password,
         },)
         .then(response => {
-            localStorage.setItem('token',response.data.token)
-            console.log('Well done!');
+            localStorage.setItem('token',response.data.token);
+            navigate('/dashboard');
             console.log('User profile', response.data.user);
             console.log('User token', response.data.jwt);
         })
         .catch(error => {
             // Handle error.
+            toast.error("Your email/password is incorrect or please payment krdo!",{
+                position: toast.POSITION.TOP_CENTER,
+                autoClose:1300
+            })
             console.log('An error occurred:', error.response);
         });
+        // let token = localStorage.getItem('token')
+        // if(!token){
+        //     navigate('/signin');
+        // }
     }
+
+
+    // function handleClick(){
+    //     let token = localStorage.getItem('token')
+    //     if(!token){
+    //         <Navigate to="/signin" />
+    //     }
+    //     <Navigate to="/dashboard" />   
+    // }
+    // useEffect(()=>{
+    //     let token = localStorage.getItem('token')
+    //     if(!token){
+    //         <Navigate to="/signin" />
+    //     }
+    //     <Navigate to="/dashboard" />   
+    // },[]) 
+    
 
   return (
     <div className='signup'>
+        <ToastContainer />
         <section class="vh-100">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">

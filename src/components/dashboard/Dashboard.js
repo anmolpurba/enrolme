@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Ieltsmodule() {
+
+function Dashboard() {
   return (
     <div className='container'>
         This is user dashboard!
@@ -8,4 +9,4 @@ function Ieltsmodule() {
   )
 }
 
-export default Ieltsmodule
+export default Dashboard
