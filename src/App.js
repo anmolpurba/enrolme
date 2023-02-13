@@ -13,6 +13,9 @@ import Speaking from "./ieltsdetail/speaking/Speaking.js";
 import Writing from "./ieltsdetail/writing/Writing.js";
 import Signup from './components/signup/Signup';
 import Signin from './components/signin/Signin';
+import Ieltsmodule from './components/dashboard/Dashboard';
+import Protectedroute from './components/protected/Protectedroute';
+import Dashboard from "./components/dashboard/Dashboard"
 
 function App() {
   return (
@@ -31,6 +34,7 @@ function App() {
             <Route path="/writing" element={<><Navbar /> <Writing /> </>} />
             <Route path="/signup" element={<> <Navbar/> <Signup/> </>} />
             <Route path="/signin" element={<> <Navbar/> <Signin/> </>} />
+            <Route path="/dashboard" element={<Protectedroute Component={Dashboard} />} />
           </Routes>
         
         

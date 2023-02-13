@@ -6,11 +6,6 @@ function Signin() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [check,setCheck] = useState(false);
-
-    if(check === true){
-        return <Navigate to="/ielts" />
-    }
 
     
     function handleSubmit(event){
@@ -18,10 +13,9 @@ function Signin() {
         Axios.post('http://localhost:1337/api/auth/local', {
             identifier: email,
             password: password,
-        })
+        },)
         .then(response => {
-            // Handle success.
-            setCheck(true);
+            localStorage.setItem('token',response.data.token)
             console.log('Well done!');
             console.log('User profile', response.data.user);
             console.log('User token', response.data.jwt);
