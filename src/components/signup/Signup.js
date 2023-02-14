@@ -3,6 +3,7 @@ import "./Signup.css"
 import Axios from "axios"
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+var otpGenerate = require("otp-generate");
 
 
 function Signup() {
@@ -10,15 +11,36 @@ function Signup() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
+    const [number,setNumber] = useState(0);
+
+    
 
     function handleSubmit(event){
         event.preventDefault();
-        // Request API.
-        // Add your own code here to customize or restrict how the public can register new users.
+        var otp = otpGenerate(6).toString();
+        //for otp vala function
+        Axios.post('http://localhost:1337/api/email', {
+            to: "anmol.jupor@gmail.com",
+            subject:"OTP",
+            text:otp,
+        })
+        .then(response => {
+            // Handle success.
+            console.log('Well done!');
+            console.log('User profile', response.data.user);
+            console.log('User token', response.data.jwt);
+        })
+        .catch(error => {
+
+            console.log('An error occurred:', error.response);
+        });
+        
+        //for registering users ------------
         Axios.post('http://localhost:1337/api/auth/local/register', {
             username: username,
             email: email,
             password: password,
+            number:number
         })
         .then(response => {
             // Handle success.
@@ -77,6 +99,23 @@ function Signup() {
                                 <div class="form-outline flex-fill mb-0">
                                 <input type="password" onChange={(e)=>{setPassword(e.target.value)}} id="form3Example4c" class="form-control" />
                                 <label class="form-label" for="form3Example4c">Password</label>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                {/* <i class="fas fa-lock fa-lg me-3 fa-fw"></i> */}
+                                <i class="fa-solid fa-phone me-3 "></i>
+                                <div class="form-outline flex-fill mb-0">
+                                <input type="text" onChange={(e)=>{setNumber(e.target.value)}} id="form3Example4c" class="form-control" />
+                                <div>
+                                    <label class="form-label" for="form3Example4c">Phone Number</label>
+                                    <a style={{marginLeft:"11rem",color:"#0087ca",textDecoration:"underline"}} href="">Send OTP</a>
+                                </div>
+                                {/* <div style={{display:"flex",justifyContent:"end"}}>
+                                    <a href="">Send OTP</a>
+                                </div> */}
+                                
+
                                 </div>
                             </div>
 
