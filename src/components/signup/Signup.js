@@ -12,13 +12,18 @@ function Signup() {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [number,setNumber] = useState(0);
+    const [Otp,SetOtp] = useState("");
+    const [toggle,Settoggle] = useState(false);
+    const [otp,Setotp] = useState("");
 
-    
+    // var otp = otpGenerate(6).toString();
+    // var sentotp = otp;
 
-    function handleSubmit(event){
+    function sendOtp(event){
         event.preventDefault();
-        var otp = otpGenerate(6).toString();
         //for otp vala function
+        var otp = otpGenerate(6).toString();
+        Setotp(otp)
         Axios.post('http://localhost:1337/api/email', {
             to: "anmol.jupor@gmail.com",
             subject:"OTP",
@@ -35,6 +40,19 @@ function Signup() {
             console.log('An error occurred:', error.response);
         });
         
+    }
+
+    function verifyOtp(event){
+        event.preventDefault();
+        if(Otp == otp){
+            Settoggle(true);
+        }
+        console.log(Otp);
+        console.log(otp);
+    }
+
+    function handleSubmit(event){
+        event.preventDefault();
         //for registering users ------------
         Axios.post('http://localhost:1337/api/auth/local/register', {
             username: username,
@@ -69,14 +87,14 @@ function Signup() {
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-11">
-                <div class="card text-black" style={{"borderRadius": "25px"}}>
+                <div class="card text-black" style={{borderRadius: "25px"}}>
                 <div class="card-body p-md-5">
                     <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                         <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-                        <form onSubmit={handleSubmit} class="mx-1 mx-md-4">
+                        <form class="mx-1 mx-md-4">
 
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -90,7 +108,10 @@ function Signup() {
                                 <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                 <div class="form-outline flex-fill mb-0">
                                 <input type="email" onChange={(e)=>{setEmail(e.target.value)}} id="form3Example3c" class="form-control" />
-                                <label class="form-label" for="form3Example3c">Your Email</label>
+                                <div>
+                                    <label class="form-label" for="form3Example4c">Email</label>
+                                    <button className='create-btn' style={{marginLeft:"14rem"}} onClick={sendOtp}>Send OTP</button>
+                                </div>
                                 </div>
                             </div>
 
@@ -107,20 +128,23 @@ function Signup() {
                                 <i class="fa-solid fa-phone me-3 "></i>
                                 <div class="form-outline flex-fill mb-0">
                                 <input type="text" onChange={(e)=>{setNumber(e.target.value)}} id="form3Example4c" class="form-control" />
-                                <div>
-                                    <label class="form-label" for="form3Example4c">Phone Number</label>
-                                    <a style={{marginLeft:"11rem",color:"#0087ca",textDecoration:"underline"}} href="">Send OTP</a>
+                                <label class="form-label" for="form3Example4c">Phone Number</label>
                                 </div>
-                                {/* <div style={{display:"flex",justifyContent:"end"}}>
-                                    <a href="">Send OTP</a>
-                                </div> */}
-                                
+                            </div>
 
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0">
+                                <input type="text" onChange={(e)=>{SetOtp(e.target.value)}} id="form3Example4c" class="form-control" />
+                                <div>
+                                    <label class="form-label" for="form3Example4c">Enter OTP</label>
+                                    <button className='create-btn' style={{marginLeft:"11rem"}} onClick={verifyOtp} >Verify OTP</button>
+                                </div>
                                 </div>
                             </div>
 
                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                               {toggle===true?<button onClick={handleSubmit} class="btn btn-primary btn-lg">Register</button>:<button onClick={(e)=>e.preventDefault()} class="btn btn-primary btn-lg">Verify OTP for Registration.</button>}
                             </div>
 
                         </form>
