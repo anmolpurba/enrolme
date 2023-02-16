@@ -1,10 +1,11 @@
 import React from 'react'
+import DashboardNav from '../dashboardNavbar/DashboardNav'
 
 
 function Dashboard() {
   return (
-    <div className='container'>
-        This is user dashboard!
+    <div >
+        <DashboardNav />
     </div>
   )
 }

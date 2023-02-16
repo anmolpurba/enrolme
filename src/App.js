@@ -2,7 +2,7 @@ import './App.css';
 import Banner from './components/banner/Banner';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
-import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Institution from './components/institutions/Institution';
 import Contact from './components/contact/Contact';
 import About from './components/aboutus/About';
@@ -13,9 +13,17 @@ import Speaking from "./ieltsdetail/speaking/Speaking.js";
 import Writing from "./ieltsdetail/writing/Writing.js";
 import Signup from './components/signup/Signup';
 import Signin from './components/signin/Signin';
-// import Ieltsmodule from './components/dashboard/Dashboard';
 import Protectedroute from './components/protected/Protectedroute';
-import Dashboard from "./components/dashboard/Dashboard"
+import Dashboard from "./components/dashboard/Dashboard";
+import Dashreading from './components/dashboardIelts/Reading/Dashreading';
+import Dashlistening from './components/dashboardIelts/Listening/Dashlistening';
+import Dashspeaking from './components/dashboardIelts/Speaking/Dashspeaking';
+import Dashwriting from './components/dashboardIelts/Writing/Dashwriting';
+
+
+
+
+
 
 function App() {
   return (
@@ -35,6 +43,11 @@ function App() {
             <Route path="/signup" element={<> <Navbar/> <Signup/> </>} />
             <Route path="/signin" element={<> <Navbar/> <Signin/> </>} />
             <Route path="/dashboard" element={<Protectedroute Component={Dashboard} />} />
+            <Route path="/dashreading" element={<Protectedroute Component={Dashreading} />} />
+            <Route path="/dashlistening" element={<Protectedroute Component={Dashlistening} />} />
+            <Route path="/dashspeaking" element={<Protectedroute Component={Dashspeaking} />} />
+            <Route path="/dashwriting" element={<Protectedroute Component={Dashwriting} />} />
+
           </Routes>
         
         
