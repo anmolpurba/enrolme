@@ -18,6 +18,7 @@ function Signin() {
             password: password,
         },)
         .then(response => {
+            console.log(response.data.token);
             localStorage.setItem('token',response.data.token);
             navigate('/dashboard');
             console.log('User profile', response.data.user);
