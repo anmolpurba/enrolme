@@ -18,8 +18,8 @@ function Signin() {
             password: password,
         },)
         .then(response => {
-            console.log(response.data.token);
-            localStorage.setItem('token',response.data.token);
+            console.log(response.data.jwt);
+            localStorage.setItem('token',response.data.jwt);
             navigate('/dashboard');
             console.log('User profile', response.data.user);
             console.log('User token', response.data.jwt);
@@ -32,28 +32,12 @@ function Signin() {
             })
             console.log('An error occurred:', error.response);
         });
-        // let token = localStorage.getItem('token')
-        // if(!token){
-        //     navigate('/signin');
-        // }
     }
 
-
-    // function handleClick(){
-    //     let token = localStorage.getItem('token')
-    //     if(!token){
-    //         <Navigate to="/signin" />
-    //     }
-    //     <Navigate to="/dashboard" />   
-    // }
-    // useEffect(()=>{
-    //     let token = localStorage.getItem('token')
-    //     if(!token){
-    //         <Navigate to="/signin" />
-    //     }
-    //     <Navigate to="/dashboard" />   
-    // },[]) 
-    
+    function forgot(event){
+        event.preventDefault();
+        navigate('/forgotpassword');
+    }
 
   return (
     <div className='signup'>
@@ -75,7 +59,12 @@ function Signin() {
                                 <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                 <div class="form-outline flex-fill mb-0">
                                 <input type="email" onChange={(e)=>{setEmail(e.target.value)}} id="form3Example3c" class="form-control" />
-                                <label class="form-label" for="form3Example3c">Your Email</label>
+                                {/* <div>
+                                    <label class="form-label" for="form3Example4c">Your Email</label>
+                                    <button className='create-btn' style={{marginLeft:"11rem"}} >Forgot Password?</button>
+                                </div> */}
+                                <label class="form-label" for="form3Example4c">Your Email</label>
+                                <button className='create-btn' style={{marginLeft:"8rem"}} onClick={forgot} >Forgot Password?</button>
                                 </div>
                             </div>
 
