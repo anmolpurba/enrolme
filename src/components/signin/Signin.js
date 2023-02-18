@@ -36,7 +36,23 @@ function Signin() {
 
     function forgot(event){
         event.preventDefault();
-        navigate('/forgotpassword');
+        Axios.post('http://localhost:1337/api/auth/forgot-password', {
+            email:email
+        },)
+        .then(response => {
+            toast.success("Check your email for OTP to change Password", {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose:1300
+            });
+        })
+        .catch(error => {
+            // Handle error.
+            toast.error("email code is invalid",{
+                position: toast.POSITION.TOP_CENTER,
+                autoClose:1300
+            })
+            console.log('An error occurred:', error.response);
+        });
     }
 
   return (

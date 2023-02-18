@@ -9,37 +9,39 @@ function Signin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmpassword,setConfirmpassword] = useState("");
-    const [verifycode,setVerifycode] = useState("");
 
 
-    function sendOTP(event){
-        event.preventDefault();
-        Axios.post('http://localhost:1337/api/auth/forgot-password', {
-            email:email
-        },)
-        .then(response => {
-            toast.success("Check your email for OTP.", {
-                position: toast.POSITION.TOP_CENTER,
-                autoClose:1300
-            });
-        })
-        .catch(error => {
-            // Handle error.
-            toast.error("email code is invalid",{
-                position: toast.POSITION.TOP_CENTER,
-                autoClose:1300
-            })
-            console.log('An error occurred:', error.response);
-        });
-    }
+    // function sendOTP(event){
+    //     event.preventDefault();
+    //     Axios.post('http://localhost:1337/api/auth/forgot-password', {
+    //         email:email
+    //     },)
+    //     .then(response => {
+    //         toast.success("Check your email for OTP.", {
+    //             position: toast.POSITION.TOP_CENTER,
+    //             autoClose:1300
+    //         });
+    //     })
+    //     .catch(error => {
+    //         // Handle error.
+    //         toast.error("email code is invalid",{
+    //             position: toast.POSITION.TOP_CENTER,
+    //             autoClose:1300
+    //         })
+    //         console.log('An error occurred:', error.response);
+    //     });
+    // }
 
     
     function handleSubmit(event){
         event.preventDefault();
+        let searchParams = new URLSearchParams(window.location.search);
+        let param = searchParams.get('code');
+
         Axios.post('http://localhost:1337/api/auth/reset-password', {
             password: password,
             passwordConfirmation:confirmpassword,
-            code:verifycode
+            code:param
         },)
         .then(response => {
             toast.success("Password Changed Successfully!", {
@@ -79,7 +81,6 @@ function Signin() {
                                 <input type="email" onChange={(e)=>{setEmail(e.target.value)}} id="form3Example3c" class="form-control" />
                                 <div>
                                     <label class="form-label" for="form3Example4c">Your Email</label>
-                                    <button className='create-btn' style={{marginLeft:"11rem"}} onClick={sendOTP} >Send OTP</button>
                                 </div>
                                 </div>
                             </div>
@@ -97,14 +98,6 @@ function Signin() {
                                 <div class="form-outline flex-fill mb-0">
                                 <input type="password" onChange={(e)=>{setConfirmpassword(e.target.value)}} id="form3Example4c" class="form-control" />
                                 <label class="form-label" for="form3Example4c">Confirm Password</label>
-                                </div>
-                            </div>
-
-                            <div class="d-flex flex-row align-items-center mb-4">
-                                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                                <div class="form-outline flex-fill mb-0">
-                                <input type="password" onChange={(e)=>{setVerifycode(e.target.value)}} id="form3Example4c" class="form-control" />
-                                <label class="form-label" for="form3Example4c">Enter OTP from email</label>
                                 </div>
                             </div>
 
