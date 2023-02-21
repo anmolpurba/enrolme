@@ -7,7 +7,7 @@ function Dashreading() {
     <div>
     <DashboardNav />
     DashReading
-</div>
+    </div>
   )
 }
 
