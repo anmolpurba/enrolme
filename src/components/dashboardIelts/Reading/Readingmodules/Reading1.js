@@ -175,9 +175,27 @@ function Reading1() {
                     <p>viii. The changing nature of medical trials.</p>                    
                     <p>ix. An investigate study that may lead to a new system.</p> 
                     <p>x. Why some scientists theories are considered second-rate</p>                    
-                   
+                    <p><span>27</span>Paragraph B <input /></p>
+                    <p><span>28</span>Paragraph C <input /></p>
+                    <p><span>29</span>Paragraph D <input /></p>
+                    <p><span>30</span>Paragraph E<input /></p>
+                    <p><span>31</span>Paragraph F <input /></p>
+                    <p><span>32</span>Paragraph G <input /></p>
 
-                   
+                    <h5>Q. Complete the summary below.Choose NO MORE THAN TWO WORDS from the passage for each answer.</h5>
+                    <p>Some criminals in England are agreeing to take part in a trial designed to help reduce their chances of <span>33</span> <input />.The idea is that while one group of randomly selected criminals undergoes the usual <span>34</span> <input />, the other group will discuss the possibility of making some repayment for the crime by meeting the <span>35</span> <input />. It is yet to be seen whether this system, known as <span>36</span> <input />,will work. </p>
+                    
+                    <h5>Q. Classify the following characteristics as relating to and fill in boxes 37-40.</h5>
+                    <p>A. Social Science</p>
+                    <p>B. Medical Science</p>
+                    <p>C. Both Social Science and Medical Science</p>
+                    <p>D. Neither Social Science nor Medical Science</p>
+
+                    <p><span>37</span>a tendency for negative results in early trials. <input /></p>
+                    <p><span>38</span>the desire to submit results for independent assessment. <input /></p>
+                    <p><span>39</span>the prioritisation of research areas to meet government needs. <input /></p>
+                    <p><span>40</span>the widespread use of studies that investigate the quality of new products.<input /></p>
+
 
                 </div> 
         </div>
