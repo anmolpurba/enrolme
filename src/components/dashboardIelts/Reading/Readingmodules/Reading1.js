@@ -1,9 +1,35 @@
-import {React,useState} from 'react'
+import {React,useState,useEffect} from 'react'
 import Axios from "axios"
 import { Document, Page } from 'react-pdf';
 import "./Reading1.css"
+import ReactMarkdown from "react-markdown"
 
 function Reading1() {
+
+    const [read,Setread] = useState("");
+
+    function onSubmit(event){
+        let arr = [];
+        for(var i=0;i<40;i++){
+            arr.push(document.getElementsByTagName("input")[i].value)
+        }
+        console.log(arr);
+        const ans = [["conditions", "craftsmen and artists", "secure livelihood", "grand gallery", "481 feet", "queens chamber", "air channels", "false", "not given", "true", "true", "false", "d", "d", "b", "a", "a", "c", "c", "f", "d", "a", "c", "e", "g", "b", "vii", "v", "ix", "i", "iv", "111", "re offending", "sentencing", "victim", "restorative justice", "a", "c", "d", "b"]]
+        if(arr === ans){
+            alert("all are correct!")
+        }
+    }
+
+    useEffect(()=>{
+        Axios.get('http://localhost:1337/api/readings')
+        .then(response => {
+            Setread(response.data.data[0].attributes.text);
+            console.log(response.data.data[0].attributes.text);
+        })
+        .catch(error => {
+            console.log('An error occurred:', error.response);
+        });
+    },[])
 
   return (  
     <div> 
@@ -38,32 +64,34 @@ function Reading1() {
                 
                     <p>Near these pyramids stands the Great Sphinx, the origin and purpose of whichconstitutesone of the world&apos;s most famous puzzles. Shaped from an outcrop of stone in the form of ahumanheadedlion, the face ispossibly aportrait of King Khafra, the son of Cheops, who was buried in the second largest pyramid. The Sphinx is one of the biggest statues ever made.</p>
                 
-                
+                    
                     <p>The Egyptian people showed reverence towards natural objects such as the lotus flower, the scarab beetle, the falcon, the lion, the sun and the River Nile. All these subjects and many more were used symbolically and conventionally as motifs in low-relief carving and painting. It was the custom of the Egyptians to depict the various parts of the human figure, usually in the most characteristic positions. The head was shown in profile except for the eye, which was represented from the front, the shoulders and a portion of the arms were portrayed from the front, while the hips and legs were side views. Wall decoration showed little or no attempt to indicate depth or perspective, except by placing distant objects above near things. It was essentially two-dimensional, and relative size indicated the status of the person, so the pharaoh was the largest figure in the composition. Egyptian art is characterised by a passion for permanence, a desire to impress by size, and a determination to make each item serve its function without much regard for the whole. It is obvious that art among these people reached a very high level and the strong influence of Egyptian art can be seen in the work of nearby civilisations.</p>
+
                 </div> 
+
 
                 {/* second column */}
                 <div className="col-lg-6" >
                     <h1 style={{color:"#284664"}}>Answers</h1>
 
                     <h5>Q. Complete the sentences below. Choose NO MORE THAN THREE WORDS from the passage for each answer.</h5>
-                    <p><span>1</span> Security and peace are two <input /> that are necessary for a civilisation to be successful for their hard work. </p>
-                    <p><span>2</span> Ancient Egyptians worked as both <input /> </p>
-                    <p><span>3</span> Ordinary Egyptians expected to receive <input/> </p>
+                    <p><span>1</span> Security and peace are two <input type="text" style={{textTransform:"uppercase"}}  /> that are necessary for a civilisation to be successful for their hard work. </p>
+                    <p><span>2</span> Ancient Egyptians worked as both <input type="text" /> </p>
+                    <p><span>3</span> Ordinary Egyptians expected to receive <input type="text" /> </p>
 
                     <h5>Q. Label the diagram below. Choose NO MORE THAN THREE WORDS AND/OR NUMBERS from the passage for each answer.</h5>
                     <img src="https://www.ielts-writing.info/images/reading/R33.png" alt="" />
-                    <p><span>4</span><input /></p>
-                    <p><span>5</span><input /></p>
-                    <p><span>6</span><input /></p>
-                    <p><span>7</span><input /></p>
+                    <p><span>4</span><input type="text" /></p>
+                    <p><span>5</span><input type="text" /></p>
+                    <p><span>6</span><input type="text" /></p>
+                    <p><span>7</span><input type="text" /></p>
                     
                     <h5>Q. Write TRUE or FALSE or NOT GIVEN.</h5>
-                    <p><span>8</span>The surface of the Great Pyramid is covered in polished limestone slabs. <input /></p>
-                    <p><span>9</span>King Khafra died before King Cheops.  <input /></p>
-                    <p><span>10</span>Egyptian carvings were often based on things found in nature. <input /></p>
-                    <p><span>11</span>Important characters in Egyptian carvings were bigger than less important characters.<input /></p>
-                    <p><span>12</span>Egyptian art was greatly influenced by the art of neighbouring cultures.<input /></p>
+                    <p><span>8</span>The surface of the Great Pyramid is covered in polished limestone slabs. <input type="text" /></p>
+                    <p><span>9</span>King Khafra died before King Cheops.  <input type="text" /></p>
+                    <p><span>10</span>Egyptian carvings were often based on things found in nature. <input type="text" /></p>
+                    <p><span>11</span>Important characters in Egyptian carvings were bigger than less important characters.<input type="text" /></p>
+                    <p><span>12</span>Egyptian art was greatly influenced by the art of neighbouring cultures.<input type="text" /></p>
 
                     <h5>Q. Choose the correct letter A,B,C or D. Write the correct letter in the input box.</h5>
                     <p>The writer's aim in the passage is to </p>
@@ -71,7 +99,7 @@ function Reading1() {
                     <p>B. explain the beliefs of the ancient Egyptians.</p>
                     <p>C. offer an interpretation of Egyptian art and sculpture.</p>
                     <p>D. provide an overview of early Egyptian soceity.</p>
-                    <p><span>13</span><input /></p>
+                    <p><span>13</span><input type="text" /></p>
                 </div> 
         </div>
 
@@ -108,17 +136,17 @@ function Reading1() {
                     <p>B. Stas Gorb</p>
                     <p>C. Walter Federte</p>
                     <p>D. Tom Eisher</p>
-                    <p><span>14</span>Some insects use their ability to stick to surfaces as a way of defending themselves.<input /></p>
-                    <p><span>15</span>What makes sticky insect feet special is the fact that they can also detach themselves easily from a surface.<input /></p>
-                    <p><span>16</span>Gecko feet seem to be stickier than they need to be.<input /></p>
-                    <p><span>17</span>A Robot with gecko-style feet would be ideal for exploring other planets.<input /></p>
-                    <p><span>18</span>Evidence shows that in order to stick,insect feet have to be wet.<input /></p>
+                    <p><span>14</span>Some insects use their ability to stick to surfaces as a way of defending themselves.<input type="text" /></p>
+                    <p><span>15</span>What makes sticky insect feet special is the fact that they can also detach themselves easily from a surface.<input type="text" /></p>
+                    <p><span>16</span>Gecko feet seem to be stickier than they need to be.<input type="text" /></p>
+                    <p><span>17</span>A Robot with gecko-style feet would be ideal for exploring other planets.<input type="text" /></p>
+                    <p><span>18</span>Evidence shows that in order to stick,insect feet have to be wet.<input type="text" /></p>
 
                     <h5>Q. Which paragraph contains the following information? Write the correct letter A-J in boxes 19-22.</h5>
-                    <p><span>19</span>some of the practical things a gecko-style adhesive could be used for <input /></p>
-                    <p><span>20</span>a description of a test involving an insect in motion <input /></p>
-                    <p><span>21</span>three different theories scientists have had about how insect feet stick <input /></p>
-                    <p><span>22</span>examples of remarkable gecko movements <input /></p>
+                    <p><span>19</span>some of the practical things a gecko-style adhesive could be used for <input type="text" /></p>
+                    <p><span>20</span>a description of a test involving an insect in motion <input type="text" /></p>
+                    <p><span>21</span>three different theories scientists have had about how insect feet stick <input type="text" /></p>
+                    <p><span>22</span>examples of remarkable gecko movements <input type="text" /></p>
 
                     <h5>Q. Complete each sentence with the correct ending A-G below.</h5>
                     <p>A. Stick to surfaces in and out of water.</p>
@@ -130,10 +158,10 @@ function Reading1() {
                     <p>G. have hairy footpads.</p>
 
 
-                    <p><span>23</span>Insect feet loose their sticking power when they <input /></p>
-                    <p><span>24</span>If you put ants on a rapidly rotating object,their feet <input /></p>
-                    <p><span>25</span>Beetles can stick to uneven surfaces because they <input /></p>
-                    <p><span>26</span>The toes on robots like Mecho-Gecko <input /></p>
+                    <p><span>23</span>Insect feet loose their sticking power when they <input type="text" /></p>
+                    <p><span>24</span>If you put ants on a rapidly rotating object,their feet <input type="text" /></p>
+                    <p><span>25</span>Beetles can stick to uneven surfaces because they <input type="text" /></p>
+                    <p><span>26</span>The toes on robots like Mecho-Gecko <input type="text" /></p>
 
                 </div> 
         </div>
@@ -175,15 +203,15 @@ function Reading1() {
                     <p>viii. The changing nature of medical trials.</p>                    
                     <p>ix. An investigate study that may lead to a new system.</p> 
                     <p>x. Why some scientists theories are considered second-rate</p>                    
-                    <p><span>27</span>Paragraph B <input /></p>
-                    <p><span>28</span>Paragraph C <input /></p>
-                    <p><span>29</span>Paragraph D <input /></p>
-                    <p><span>30</span>Paragraph E<input /></p>
-                    <p><span>31</span>Paragraph F <input /></p>
-                    <p><span>32</span>Paragraph G <input /></p>
+                    <p><span>27</span>Paragraph B <input type="text" /></p>
+                    <p><span>28</span>Paragraph C <input type="text" /></p>
+                    <p><span>29</span>Paragraph D <input type="text" /></p>
+                    <p><span>30</span>Paragraph E<input type="text" /></p>
+                    <p><span>31</span>Paragraph F <input type="text" /></p>
+                    <p><span>32</span>Paragraph G <input type="text" /></p>
 
                     <h5>Q. Complete the summary below.Choose NO MORE THAN TWO WORDS from the passage for each answer.</h5>
-                    <p>Some criminals in England are agreeing to take part in a trial designed to help reduce their chances of <span>33</span> <input />.The idea is that while one group of randomly selected criminals undergoes the usual <span>34</span> <input />, the other group will discuss the possibility of making some repayment for the crime by meeting the <span>35</span> <input />. It is yet to be seen whether this system, known as <span>36</span> <input />,will work. </p>
+                    <p>Some criminals in England are agreeing to take part in a trial designed to help reduce their chances of <span>33</span> <input type="text" />.The idea is that while one group of randomly selected criminals undergoes the usual <span>34</span> <input type="text" />, the other group will discuss the possibility of making some repayment for the crime by meeting the <span>35</span> <input type="text" />. It is yet to be seen whether this system, known as <span>36</span> <input type="text" />,will work. </p>
                     
                     <h5>Q. Classify the following characteristics as relating to and fill in boxes 37-40.</h5>
                     <p>A. Social Science</p>
@@ -191,10 +219,13 @@ function Reading1() {
                     <p>C. Both Social Science and Medical Science</p>
                     <p>D. Neither Social Science nor Medical Science</p>
 
-                    <p><span>37</span>a tendency for negative results in early trials. <input /></p>
-                    <p><span>38</span>the desire to submit results for independent assessment. <input /></p>
-                    <p><span>39</span>the prioritisation of research areas to meet government needs. <input /></p>
-                    <p><span>40</span>the widespread use of studies that investigate the quality of new products.<input /></p>
+                    <p><span>37</span>a tendency for negative results in early trials. <input type="text" /></p>
+                    <p><span>38</span>the desire to submit results for independent assessment. <input type="text" /></p>
+                    <p><span>39</span>the prioritisation of research areas to meet government needs. <input type="text" /></p>
+                    <p><span>40</span>the widespread use of studies that investigate the quality of new products.<input type="text" /></p>
+
+                    <button type="button" onClick={onSubmit} class="btn" style={{backgroundColor:"green",color:"white"}}>Submit</button>
+
 
 
                 </div> 
