@@ -48,8 +48,7 @@ function App() {
             <Route path="/dashlistening" element={<Protectedroute Component={Dashlistening} />} />
             <Route path="/dashspeaking" element={<Protectedroute Component={Dashspeaking} />} />
             <Route path="/dashwriting" element={<Protectedroute Component={Dashwriting} />} />
-            <Route path="/reading1" element={<Protectedroute Component={Reading1} />} />
-
+            <Route path="/dashreading/:id" element={<Protectedroute Component={Reading1} />} />
           </Routes>
         
         
