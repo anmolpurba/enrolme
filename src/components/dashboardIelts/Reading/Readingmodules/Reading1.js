@@ -3,6 +3,8 @@ import Axios from "axios"
 import { Document, Page } from 'react-pdf';
 import "./Reading1.css"
 import ReactMarkdown from "react-markdown"
+import Questions from '../Readingquestions/Questions';
+
 
 function Reading1() {
 
@@ -21,10 +23,11 @@ function Reading1() {
     }
 
     useEffect(()=>{
-        Axios.get('http://localhost:1337/api/readings')
+        var link = document.location.href.split('/')[4];
+        Axios.get(`http://localhost:1337/api/readings/${link}`)
         .then(response => {
-            Setread(response.data.data[0].attributes.text);
-            console.log(response.data.data[0].attributes.text);
+            Setread(response.data.data.attributes.text);
+            // console.log(response.data.data.attributes.text);
         })
         .catch(error => {
             console.log('An error occurred:', error.response);
@@ -34,10 +37,13 @@ function Reading1() {
   return (  
     <div> 
         <div className="row">
-            <div className="col-lg-6" style={{textAlign:"justify",backgroundColor:"#d7e6dc",marginLeft:"0.7rem"}}>
+            <div className="col" style={{textAlign:"justify",backgroundColor:"#d7e6dc",marginLeft:"0.7rem"}}>
                 <ReactMarkdown>
                     {read}
                 </ReactMarkdown>
+            </div>
+            <div className="col" style={{textAlign:"justify",backgroundColor:"#d7e6dc",marginLeft:"0.7rem"}}>
+                <Questions />
             </div>
         </div>
 
