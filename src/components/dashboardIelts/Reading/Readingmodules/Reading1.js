@@ -42,7 +42,7 @@ function Reading1() {
                     {read}
                 </ReactMarkdown>
             </div>
-            <div className="col" style={{textAlign:"justify",backgroundColor:"#d7e6dc",marginLeft:"0.7rem"}}>
+            <div className="col">
                 <Questions />
             </div>
         </div>
