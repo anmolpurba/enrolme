@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TrueFalseNG(props) {
+function CorrectParagraph(props) {
   return (
     <div>
         <p>{props.questionText} <input type="text" /></p>
@@ -8,4 +8,4 @@ function TrueFalseNG(props) {
   )
 }
 
-export default TrueFalseNG
+export default CorrectParagraph
