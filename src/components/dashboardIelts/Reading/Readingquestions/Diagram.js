@@ -1,13 +1,18 @@
 import React from 'react'
 
 function Diagram(props) {
+    // arr to store number of inputs required for diagram question
+    const diagramInput = [];
+    function inp(num){
+        for(var i=0;i<num;i++){
+            diagramInput.push(<input type="text" style={{display:"block"}} />);
+        }
+    }
   return (
     <div>
         <img src={props.image} alt="" />
-        <input type="text" style={{display:"block"}} />
-        <input type="text" style={{display:"block"}} />
-        <input type="text" style={{display:"block"}} />
-        <input type="text" style={{display:"block"}} />
+        {inp(props.diagramInput)}
+        {diagramInput.map((ele)=>{return ele})}
     </div>
   )
 }
