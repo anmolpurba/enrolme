@@ -36,13 +36,13 @@ function Reading1() {
 
   return (  
     <div> 
-        <div className="row">
-            <div className="col" style={{textAlign:"justify",backgroundColor:"#d7e6dc",marginLeft:"0.7rem"}}>
+        <div className="row" style={{position:"fixed"}}>
+            <div className="col" style={{textAlign:"justify",backgroundColor:"#d7e6dc",margin:"1.5rem",overflowY:"scroll",height: "42rem"}}>
                 <ReactMarkdown>
                     {read}
                 </ReactMarkdown>
             </div>
-            <div className="col">
+            <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
                 <Questions />
             </div>
         </div>

@@ -5,7 +5,7 @@ function Diagram(props) {
     const diagramInput = [];
     function inp(num){
         for(var i=0;i<num;i++){
-            diagramInput.push(<input type="text" style={{display:"block"}} />);
+            diagramInput.push(<input type="text" style={{display:"block",marginBottom:"0.6rem"}} />);
         }
     }
   return (

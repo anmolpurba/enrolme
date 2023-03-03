@@ -5,7 +5,7 @@ function Summary(props) {
     const summaryInput = [];
     function inp(num){
         for(var i=0;i<num;i++){
-            summaryInput.push(<input type="text" style={{display:"block"}} />);
+            summaryInput.push(<input type="text" style={{display:"block",marginBottom:"0.6rem"}} />);
         }
     }
   return (
