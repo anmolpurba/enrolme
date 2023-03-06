@@ -3,7 +3,7 @@ import React from 'react'
 function ChooseCorrectMultiple(props) {
   return (
     <div>
-        <p>{props.questionText} <input type="text" /> </p>
+        <p>{props.questionText} <input style={{margin:"0.5rem"}} type="text" /> </p>
     </div>
   )
 }
