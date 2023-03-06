@@ -23,6 +23,7 @@ function Questions() {
         })
     },[])
 
+    // for sorting according to serial number we getting in api call
     obj.length>0 && obj.sort(function(x, y) {
         if (x.attributes.sr < y.attributes.sr) {
           return -1;
@@ -33,15 +34,14 @@ function Questions() {
     
 
     function blan(param){
-        
-        if(param.attributes.questionType==="blanks"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Blanks sr={param.attributes.sr} questionText={param.attributes.questionText} /> </> 
-        }
         if(param.attributes.questionType==="diagram"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={`http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} diagramInput={param.attributes.diagramInput} /> </>
         }
-        if(param.attributes.questionType==="TrueFalseNG"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <TrueFalseNG sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
+        if(param.attributes.questionType==="diagram2"){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={`http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} diagramInput={param.attributes.diagramInput} /> </>
+        }
+        if(param.attributes.questionType==="diagram3"){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={`http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} diagramInput={param.attributes.diagramInput} /> </>
         }
         if(param.attributes.questionType==="ChooseCorrect"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
@@ -55,13 +55,31 @@ function Questions() {
         if(param.attributes.questionType==="ChooseCorrect4"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         }
-        if(param.attributes.questionType==="CorrectParagraph"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <CorrectParagraph sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
+        if(param.attributes.questionType==="ChooseCorrect5"){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Blanks sr={param.attributes.sr} questionText={param.attributes.questionText} /> </> 
+        }
+        if(param.attributes.questionType==="ChooseCorrect6"){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         } 
-        if(param.attributes.questionType==="CorrectParagraph2"){
+        if(param.attributes.questionType==="ChooseCorrect7"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         }
+        if(param.attributes.questionType==="ChooseCorrect8"){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <TrueFalseNG sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
+        }
+        if(param.attributes.questionType==="ChooseCorrect9"){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <TrueFalseNG sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
+        } 
+        if(param.attributes.questionType==="ChooseCorrect10"){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <TrueFalseNG sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
+        } 
         if(param.attributes.questionType==="summary"){ 
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+        }
+        if(param.attributes.questionType==="summary2"){ 
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+        }
+        if(param.attributes.questionType==="summary3"){ 
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
         }
         
