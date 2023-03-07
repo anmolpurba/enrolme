@@ -35,13 +35,13 @@ function Questions() {
 
     function blan(param){
         if(param.attributes.questionType==="diagram"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={`http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} diagramInput={param.attributes.diagramInput} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram2"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={`http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} diagramInput={param.attributes.diagramInput} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram3"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={`http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} diagramInput={param.attributes.diagramInput} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="ChooseCorrect"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
@@ -74,7 +74,7 @@ function Questions() {
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <TrueFalseNG sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         } 
         if(param.attributes.questionType==="summary"){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="summary2"){ 
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>

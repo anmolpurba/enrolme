@@ -9,17 +9,35 @@ import Questions from '../Readingquestions/Questions';
 function Reading1() {
 
     const [read,Setread] = useState("");
+    const [answers,Setanswers] = useState([]);
 
     function onSubmit(event){
-        let arr = [];
+        event.preventDefault();
+        let inputArr = [];
+        let answerArr = [];
+        let incorrect = [];
+        //for getting all the answers that user puts in the input tag
         for(var i=0;i<40;i++){
-            arr.push(document.getElementsByTagName("input")[i].value)
+            inputArr.push(document.getElementsByTagName("input")[i].value)
         }
-        console.log(arr);
-        const ans = [["conditions", "craftsmen and artists", "secure livelihood", "grand gallery", "481 feet", "queens chamber", "air channels", "false", "not given", "true", "true", "false", "d", "d", "b", "a", "a", "c", "c", "f", "d", "a", "c", "e", "g", "b", "vii", "v", "ix", "i", "iv", "111", "re offending", "sentencing", "victim", "restorative justice", "a", "c", "d", "b"]]
-        if(arr === ans){
-            alert("all are correct!")
+        
+        //for getting all the answers putted in content type with questions
+        for(var i=0;i<answers.length;i++){
+            answerArr.push(answers[i].attributes.answer)
         }
+        // answerArr = [["conditions", "craftsmen and artists", "secure livelihood", "grand gallery", "481 feet", "queens chamber", "air channels", "false", "not given", "true", "true", "false", "d", "d", "b", "a", "a", "c", "c", "f", "d", "a", "c", "e", "g", "b", "vii", "v", "ix", "i", "iv", "111", "re offending", "sentencing", "victim", "restorative justice", "a", "c", "d", "b"]]
+        console.log(inputArr)
+        console.log(answerArr)
+        var count = 0;
+        for(var i=0;i<inputArr.length;i++){
+            if(inputArr[i].toLowerCase() == answerArr[i].toLowerCase()){
+                count++
+            }
+            else{
+                incorrect.push(i+1)
+            }
+        }
+        alert("YOUR SCORE IS:"+count+"/40 "+"& your incorrect answers are: "+incorrect)
     }
 
     useEffect(()=>{
@@ -32,7 +50,23 @@ function Reading1() {
         .catch(error => {
             console.log('An error occurred:', error.response);
         });
+        
+        //to get answers of all questions 
+        Axios.get(`http://localhost:1337/api/readings/${link}?populate[questions][populate]=*`).then((response)=>{
+            Setanswers(response.data.data.attributes.questions.data);
+            // console.log(response.data.data.attributes.questions.data);
+        }).catch((err)=>{
+            console.log(err);
+        })
     },[])
+
+    // for sorting according to serial number we getting in api call
+    answers.length>0 && answers.sort(function(x, y) {
+        if (x.attributes.sr < y.attributes.sr) {
+          return -1;
+        }
+        return 1;
+    });
 
   return (  
     <div> 
@@ -44,12 +78,9 @@ function Reading1() {
             </div>
             <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
                 <Questions />
+                <button type="button" onClick={onSubmit} class="btn" style={{backgroundColor:"#327846",color:"white"}}>SUBMIT</button>
             </div>
         </div>
-
-
-
-
     </div> 
             
     
