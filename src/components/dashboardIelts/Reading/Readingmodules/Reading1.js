@@ -10,6 +10,7 @@ function Reading1() {
 
     const [read,Setread] = useState("");
     const [answers,Setanswers] = useState([]);
+    const [showAnswers,SetshowAnswers] = useState(false);
 
     function onSubmit(event){
         event.preventDefault();
@@ -37,7 +38,7 @@ function Reading1() {
                 incorrect.push(i+1)
             }
         }
-        alert("YOUR SCORE IS:"+count+"/40 "+"& your incorrect answers are: "+incorrect)
+        alert("YOUR SCORE IS:"+count+"/40 "+ "\n" +"INCORRECT ANSWERS: "+incorrect)
     }
 
     useEffect(()=>{
@@ -79,7 +80,20 @@ function Reading1() {
             <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
                 <Questions />
                 <button type="button" onClick={onSubmit} class="btn" style={{backgroundColor:"#327846",color:"white"}}>SUBMIT</button>
+                <button type="button" onClick={()=>{SetshowAnswers(!showAnswers)}} class="btn" style={{backgroundColor:"#327846",color:"white",marginLeft:"1rem"}}>{showAnswers?<>HIDE ANSWERS</>:<>SHOW ANSWERS</>}</button>
             </div>
+
+            {/* logic to show answers when button is clicked */}
+            {showAnswers?
+            <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
+                <h1>Answers</h1>
+                {answers.map((ans)=>{
+                    return <p> <span style={{backgroundColor:"#327846",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{ans.attributes.sr}</span> {ans.attributes.answer} </p>
+                })}
+            </div>
+            :null}
+            
+                        
         </div>
     </div> 
             
