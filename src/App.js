@@ -21,6 +21,7 @@ import Dashspeaking from './components/dashboardIelts/Speaking/Dashspeaking';
 import Dashwriting from './components/dashboardIelts/Writing/Dashwriting';
 import Resetpassword from "./components/resetpassword/Resetpassword";
 import Reading1 from './components/dashboardIelts/Reading/Readingmodules/Reading1';
+import Listening1 from './components/dashboardIelts/Listening/Listening1';
 
 
 
@@ -49,6 +50,7 @@ function App() {
             <Route path="/dashspeaking" element={<Protectedroute Component={Dashspeaking} />} />
             <Route path="/dashwriting" element={<Protectedroute Component={Dashwriting} />} />
             <Route path="/dashreading/:id" element={<Protectedroute Component={Reading1} />} />
+            <Route path="/dashlistening/:id" element={<Protectedroute Component={Listening1} />} />
           </Routes>
         
         

@@ -1,22 +1,21 @@
 import {React,useState,useEffect} from 'react'
-import "./Questions.css"
-import Blanks from './Blanks'
-import Diagram from "./Diagram.js"
-import TrueFalseNG from './TrueFalseNG'
+// import Blanks from './Blanks'
+// import Diagram from "./Diagram.js"
+// import TrueFalseNG from './TrueFalseNG'
 import ChooseCorrect from './ChooseCorrect'
-import ChooseCorrectMultiple from './ChooseCorrectMultiple'
-import CorrectParagraph from './CorrectParagraph'
-import Summary from './Summary'
+// import ChooseCorrectMultiple from './ChooseCorrectMultiple'
+// import CorrectParagraph from './CorrectParagraph'
+// import Summary from './Summary'
 import Axios from "axios"
 
-function Questions() {
+function QuestionsListening() {
                                                                                                                                                    
     const [obj,Setobj] = useState([])
 
     useEffect(()=>{
         var link = document.location.href.split('/')[4];
-        Axios.get(`http://localhost:1337/api/readings/${link}?populate[questions][populate]=*`).then((response)=>{
-            Setobj(response.data.data.attributes.questions.data);
+        Axios.get(`http://localhost:1337/api/listenings/${link}?populate=*`).then((response)=>{
+            Setobj(response.data.data.attributes.listening_questions.data);
             // console.log(response.data.data.attributes.questions.data);
         }).catch((err)=>{
             console.log(err);
@@ -34,15 +33,15 @@ function Questions() {
     
 
     function blan(param){
-        if(param.attributes.questionType==="diagram"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
-        }
-        if(param.attributes.questionType==="diagram2"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
-        }
-        if(param.attributes.questionType==="diagram3"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
-        }
+        // if(param.attributes.questionType==="diagram"){
+        //     return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+        // }
+        // if(param.attributes.questionType==="diagram2"){
+        //     return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+        // }
+        // if(param.attributes.questionType==="diagram3"){
+        //     return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+        // }
         if(param.attributes.questionType==="ChooseCorrect"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         }
@@ -73,15 +72,15 @@ function Questions() {
         if(param.attributes.questionType==="ChooseCorrect10"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         } 
-        if(param.attributes.questionType==="summary"){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
-        }
-        if(param.attributes.questionType==="summary2"){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
-        }
-        if(param.attributes.questionType==="summary3"){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
-        }
+        // if(param.attributes.questionType==="summary"){ 
+        //     return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+        // }
+        // if(param.attributes.questionType==="summary2"){ 
+        //     return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+        // }
+        // if(param.attributes.questionType==="summary3"){ 
+        //     return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+        // }
         
     }
     
@@ -95,4 +94,4 @@ function Questions() {
   )
 }
 
-export default Questions
+export default QuestionsListening
