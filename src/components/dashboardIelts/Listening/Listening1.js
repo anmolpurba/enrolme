@@ -1,6 +1,10 @@
 import {React,useState,useEffect} from 'react'
 import Axios from "axios"
 import QuestionsListening from './Listeningquestions/QuestionsListening';
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+import "./Listening1.css"
+
 
 
 function Listening1() {
@@ -27,14 +31,15 @@ function Listening1() {
         
         {console.log(`http://localhost:1337/${listen}`)}
         <h1 style={{display:"flex",justifyContent:"center"}}>{`LISTENING ${link}`}</h1>
-        <div className="container" style={{display:"flex",justifyContent:"center"}}>
-            <audio style={{width:"70%"}}
-                controls
-                src={`http://localhost:1337${listen}`}>
-            </audio>
+        <div style={{display:"flex",justifyContent:"center"}}>
+            <AudioPlayer
+                style={{backgroundColor:"#d6f0f4",border:"1px solid #32b3c7",width:"60%"}}
+                src={`http://localhost:1337${listen}`}
+            />
         </div>
+
         {/* questionsListening */}
-        <div>
+        <div className='container'>
             <QuestionsListening />
         </div>
         
