@@ -41,15 +41,15 @@ function QuestionsListening() {
 
     
 
-    function blan(param){
-        if(param.attributes.questionType==="Table"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table sr={param.attributes.sr} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+    function blan(param){ 
+        if(param.attributes.questionType==="Table" && param.attributes.heading!=null){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
-        if(param.attributes.questionType==="Table2"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table sr={param.attributes.sr} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+        if(param.attributes.questionType==="Table2" && param.attributes.heading!=null){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
-        if(param.attributes.questionType==="Table3"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table sr={param.attributes.sr} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+        if(param.attributes.questionType==="Table3" && param.attributes.heading!=null){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="diagram"){
             // {console.log(param.attributes.diagramImage.data)}
@@ -92,16 +92,15 @@ function QuestionsListening() {
         if(param.attributes.questionType==="ChooseCorrect10"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         } 
-        if(param.attributes.questionType==="summary"){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+        if(param.attributes.questionType==="summary" && param.attributes.heading!=null){ 
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
-        if(param.attributes.questionType==="summary2"){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+        if(param.attributes.questionType==="summary2" && param.attributes.heading!=null){ 
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
         }
-        if(param.attributes.questionType==="summary3"){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+        if(param.attributes.questionType==="summary3" && param.attributes.heading!=null){ 
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
         }
-        
     }
     
 

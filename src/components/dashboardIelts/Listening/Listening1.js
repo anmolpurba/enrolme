@@ -28,11 +28,10 @@ function Listening1() {
 
   return (
     <div>
-        
-        {console.log(`http://localhost:1337/${listen}`)}
         <h1 style={{display:"flex",justifyContent:"center"}}>{`LISTENING ${link}`}</h1>
-        <div style={{display:"flex",justifyContent:"center"}}>
+        <div  style={{display:"flex",justifyContent:"center"}}>
             <AudioPlayer
+                className='audio'
                 style={{backgroundColor:"#d6f0f4",border:"1px solid #32b3c7",width:"60%"}}
                 src={`http://localhost:1337${listen}`}
             />
