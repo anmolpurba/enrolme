@@ -12,6 +12,7 @@ function Listening1() {
     const [listen,Setlisten] = useState("");
     var link = document.location.href.split('/')[4];
 
+    const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
 
     useEffect(()=>{
         
@@ -28,19 +29,36 @@ function Listening1() {
 
   return (
     <div>
-        <h1 style={{display:"flex",justifyContent:"center"}}>{`LISTENING ${link}`}</h1>
-        <div  style={{display:"flex",justifyContent:"center"}}>
-            <AudioPlayer
-                className='audio'
-                style={{backgroundColor:"#d6f0f4",border:"1px solid #32b3c7",width:"60%"}}
-                src={`http://localhost:1337${listen}`}
-            />
+        {/* <h1 style={{display:"flex",justifyContent:"center"}}>{`LISTENING ${link}`}</h1> */}
+
+        <div className="row" style={{position:"fixed"}}>
+            {/* audio and questions */}
+            <div className='col-8 container' style={{padding:"2rem",overflowY:"scroll",height: "42rem"}}>
+                <AudioPlayer
+                    className='audio'
+                    style={{backgroundColor:"#d6f0f4",border:"1px solid #32b3c7",width:"90%"}}
+                    src={`http://localhost:1337${listen}`}
+                />
+                
+                {/* questionsListening */}
+                <QuestionsListening />
+            </div>
+
+            {/* questionpallete */}
+            <div className="col container " style={{width:"5rem",backgroundColor:"#284664",position:"sticky"}}>
+                <img style={{display:"flex",justifyContent:"center"}} src="https://ads.intergreat.com/www/images/30c9e2d53a04486eb2be804aba0fc3d9.png" />
+                <p style={{color:"white",fontSize:"22px",fontWeight:"600",display:"flex",justifyContent:"center"}}>QUESTION PALETTE</p>
+                <div className="container">
+                    {number.map((num)=>{
+                        return <span style={{margin:"0.4rem",fontWeight:"700",backgroundColor:"#32b3c7",borderRadius:"50%",color:"#fff",textAlign:"center",height:"28px",width:"30px"}}>{num}</span> 
+                    })}
+                </div>
+                
+                
+            </div>
         </div>
 
-        {/* questionsListening */}
-        <div className='container'>
-            <QuestionsListening />
-        </div>
+        
         
     </div>
   )
