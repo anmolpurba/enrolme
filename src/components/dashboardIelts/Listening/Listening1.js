@@ -4,6 +4,7 @@ import QuestionsListening from './Listeningquestions/QuestionsListening';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import "./Listening1.css"
+import ReactCountdownClock from "react-countdown-clock"
 
 
 
@@ -29,7 +30,6 @@ function Listening1() {
 
   return (
     <div>
-        {/* <h1 style={{display:"flex",justifyContent:"center"}}>{`LISTENING ${link}`}</h1> */}
 
         <div className="row" style={{position:"fixed"}}>
             {/* audio and questions */}
@@ -47,12 +47,33 @@ function Listening1() {
             {/* questionpallete */}
             <div className="col container " style={{width:"5rem",backgroundColor:"#284664",position:"sticky"}}>
                 <img style={{display:"flex",justifyContent:"center"}} src="https://ads.intergreat.com/www/images/30c9e2d53a04486eb2be804aba0fc3d9.png" />
-                <p style={{color:"white",fontSize:"22px",fontWeight:"600",display:"flex",justifyContent:"center"}}>QUESTION PALETTE</p>
+                <p style={{color:"white",marginTop:"0.5rem",fontSize:"22px",fontWeight:"600",display:"flex",justifyContent:"center"}}>QUESTION PALETTE</p>
+
+                {/* for displaying numbers of checking */}
                 <div className="container">
                     {number.map((num)=>{
-                        return <span style={{margin:"0.4rem",fontWeight:"700",backgroundColor:"#32b3c7",borderRadius:"50%",color:"#fff",textAlign:"center",height:"28px",width:"30px"}}>{num}</span> 
+                        return <span className='number' style={{margin:"0.4rem",fontWeight:"700",backgroundColor:"#32b3c7",borderRadius:"50%",color:"#fff",textAlign:"center",height:"28px",width:"30px"}}>{num}</span> 
                     })}
                 </div>
+
+                {/* for submit button */}
+                <div className="container">
+                    <div className='convertToInline' style={{float:"left"}}>
+                        <ReactCountdownClock 
+                        seconds={2400}
+                        color="#f3f3f3"
+                        alpha={0.9}
+                        size={150}
+                        />
+                    </div>
+                    
+                    <div style={{float:"right"}}>
+                        <button type="button" class="btn" style={{backgroundColor:"#f3f3f3"}}><i class="fa-solid fa-paper-plane"></i> Submit</button>
+                        <button type="button" class="btn" style={{backgroundColor:"#f3f3f3",marginLeft:"1rem"}}><i class="fa-solid fa-cubes-stacked"></i> Answers</button>
+                    </div>
+
+                </div>
+
                 
                 
             </div>
