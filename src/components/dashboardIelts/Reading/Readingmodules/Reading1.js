@@ -14,6 +14,7 @@ function Reading1() {
 
     function onSubmit(event){
         event.preventDefault();
+        
         let inputArr = [];
         let answerArr = [];
         let incorrect = [];
@@ -68,6 +69,7 @@ function Reading1() {
         }
         return 1;
     });
+
 
   return (  
     <div> 

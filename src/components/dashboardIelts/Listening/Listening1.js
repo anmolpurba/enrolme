@@ -9,6 +9,52 @@ import ReactCountdownClock from "react-countdown-clock"
 
 
 function Listening1() {
+
+    const [answers,Setanswers] = useState([]);
+    const [showAnswers,SetshowAnswers] = useState(false);
+
+    function onSubmit(event){
+        event.preventDefault();
+        let inputArr = [];
+        let answerArr = [];
+        let incorrect = [];
+        console.log(inputArr)
+        console.log(answerArr)
+        //for getting all the answers that user puts in the input tag
+        for(var i=0;i<40;i++){
+            inputArr.push(document.getElementsByClassName('userInput')[i].value)
+        }
+        
+        //for getting all the answers putted in content type with questions
+        for(var i=0;i<answers.length;i++){
+            answerArr.push(answers[i].attributes.answer)
+        }
+
+        console.log(inputArr)
+        console.log(answerArr)
+        var count = 0;
+        for(var i=0;i<inputArr.length;i++){
+            if(inputArr[i].toLowerCase() == answerArr[i].toLowerCase()){
+                count++
+            }
+            else{
+                incorrect.push(i+1)
+            }
+        }
+        alert("YOUR SCORE IS:"+count+"/40 "+ "\n" +"INCORRECT ANSWERS: "+incorrect)
+    }
+
+
+    // for sorting according to serial number we getting in api call
+    answers.length>0 && answers.sort(function(x, y) {
+        if (x.attributes.sr < y.attributes.sr) {
+          return -1;
+        }
+        return 1;
+    });
+
+
+
     // to store url of audio file
     const [listen,Setlisten] = useState("");
     var link = document.location.href.split('/')[4];
@@ -24,6 +70,14 @@ function Listening1() {
         })
         .catch(error => {
             console.log('An error occurred:', error.response);
+        })
+
+        //to get answers of all questions 
+        Axios.get(`http://localhost:1337/api/listenings/${link}/?populate=listening_questions.diagramImage.media`).then((response)=>{
+            Setanswers(response.data.data.attributes.listening_questions.data);
+            // console.log(response.data.data.attributes.listening_questions.data);
+        }).catch((err)=>{
+            console.log(err);
         })
     },[])
 
@@ -68,15 +122,22 @@ function Listening1() {
                     </div>
                     
                     <div style={{float:"right"}}>
-                        <button type="button" class="btn" style={{backgroundColor:"#f3f3f3"}}><i class="fa-solid fa-paper-plane"></i> Submit</button>
-                        <button type="button" class="btn" style={{backgroundColor:"#f3f3f3",marginLeft:"1rem"}}><i class="fa-solid fa-cubes-stacked"></i> Answers</button>
+                        <button type="button" onClick={onSubmit} class="btn" style={{backgroundColor:"#f3f3f3"}}><i class="fa-solid fa-paper-plane"></i> Submit</button>
+                        <button type="button" onClick={()=>{SetshowAnswers(!showAnswers)}} class="btn" style={{backgroundColor:"#f3f3f3",marginLeft:"1rem"}}>{showAnswers?<><i class="fa-solid fa-cubes-stacked"></i>HIDE ANSWERS</>:<><i class="fa-solid fa-cubes-stacked"></i>SHOW ANSWERS</>}</button>
                     </div>
 
                 </div>
-
-                
-                
             </div>
+
+            {/* logic to show answers when button is clicked */}
+            {showAnswers?
+            <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
+                <h1>Answers</h1>
+                {answers.map((ans)=>{
+                    return <p> <span style={{backgroundColor:"#32b3c7",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{ans.attributes.sr}</span> {ans.attributes.answer} </p>
+                })}
+            </div>
+            :null}
         </div>
 
         

@@ -21,7 +21,7 @@ function ChooseCorrect(props) {
           <ReactMarkdown children={markdown} />
           <label> Choose Your Response :    
           <span style={{backgroundColor:"#32b3c7",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{props.sr}</span> 
-            <select style={{marginLeft:"1rem"}}  value={mcq} onChange={e => Setmcq(e.target.value)}>
+            <select className='userInput' id={props.sr} style={{marginLeft:"1rem"}}  value={mcq} onChange={e => Setmcq(e.target.value)}>
               <option value="a">A</option>
               <option value="b">B</option>
               <option value="c">C</option>

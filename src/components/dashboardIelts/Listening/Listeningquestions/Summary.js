@@ -10,13 +10,15 @@ function Summary(props) {
       <span style={{backgroundColor:"#32b3c7",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{match}</span> 
     ));
   }
+
+  
   return (
     <div>
         <p>
         {/* {props.questionText}  */}
         <span style={{display:"inline"}}>
-          {reactStringReplace(markdown, '$$', (match, i) => (
-            <div className="spacer" style={{display:"inline"}}> <input onChange={()=>{console.log("moosewala")}} style={{border:"none",borderBottom:"2px solid #aaa",outline:"none",margin:"0.3rem"}} /> </div>
+          {reactStringReplace(markdown, `$$`, (match ,i) => (
+            <div className="spacer" style={{display:"inline"}}> <input className='userInput' id={props.sr} style={{border:"none",borderBottom:"2px solid #aaa",outline:"none",margin:"0.3rem"}} /> </div>
           ))}
         </span>
         {/* <span style={{backgroundColor:"#32b3c7",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{props.sr}</span>  */}

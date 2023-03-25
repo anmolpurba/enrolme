@@ -43,39 +43,39 @@ function QuestionsListening() {
 
     function blan(param){ 
         if(param.attributes.questionType==="Table" && param.attributes.heading!=null){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="Table2" && param.attributes.heading!=null){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="Table3" && param.attributes.heading!=null){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="diagram"){
             // {console.log(param.attributes.diagramImage.data)}
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram2"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram3"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="ChooseCorrect"){
             {console.log(param.attributes.questionText)}
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect id={param.attributes.sr} sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="ChooseCorrect2"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr}  questionText={param.attributes.questionText} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect id={param.attributes.sr} sr={param.attributes.sr}  questionText={param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="ChooseCorrect3"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="ChooseCorrect4"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect id={param.attributes.sr} sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="ChooseCorrect5"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </> 
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect id={param.attributes.sr} sr={param.attributes.sr} questionText={param.attributes.questionText} /> </> 
         }
         if(param.attributes.questionType==="ChooseCorrect6"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
@@ -93,13 +93,13 @@ function QuestionsListening() {
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         } 
         if(param.attributes.questionType==="summary" && param.attributes.heading!=null){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="summary2" && param.attributes.heading!=null){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
         }
         if(param.attributes.questionType==="summary3" && param.attributes.heading!=null){ 
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
         }
     }
     
