@@ -20,7 +20,7 @@ function Reading1() {
         let incorrect = [];
         //for getting all the answers that user puts in the input tag
         for(var i=0;i<40;i++){
-            inputArr.push(document.getElementsByTagName("input")[i].value)
+            inputArr.push(document.getElementsByClassName('userInput')[i].value)
         }
         
         //for getting all the answers putted in content type with questions

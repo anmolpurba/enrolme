@@ -11,7 +11,7 @@ function Diagram(props) {
   return (
     <div>
         { props.image &&  <img src={props.image} alt="" />}
-        <p> <span style={{backgroundColor:"#327846",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{props.sr}</span> <input  style={{margin:"0.2rem"}} type="text" /></p>
+        <p> <span style={{backgroundColor:"#327846",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{props.sr}</span> <input className='userInput' id={props.sr} style={{border:"none",borderBottom:"2px solid #aaa",outline:"none",margin:"0.3rem"}} /> </p>
         {/* {diagramInput.map((ele)=>{return ele})} */}
     </div>
   )
