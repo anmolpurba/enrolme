@@ -23,6 +23,7 @@ import Resetpassword from "./components/resetpassword/Resetpassword";
 import Reading1 from './components/dashboardIelts/Reading/Readingmodules/Reading1';
 import Listening1 from './components/dashboardIelts/Listening/Listening1';
 import Writing1 from './components/dashboardIelts/Writing/Writing1';
+import NewDashboard from './components/dashboard/NewDashboard';
 
 
 
@@ -45,7 +46,8 @@ function App() {
             <Route path="/signup" element={<> <Navbar/> <Signup/> </>} />
             <Route path="/signin" element={<> <Navbar/> <Signin/> </>} /> 
             <Route path="/forgotpassword" element={<> <Navbar/> <Resetpassword/> </>} />
-            <Route path="/dashboard" element={<Protectedroute Component={Dashboard} />} />
+            {/* <Route path="/dashboard" element={<Protectedroute Component={Dashboard} />} /> */}
+            <Route path="/dashboard" element={<Protectedroute Component={NewDashboard} />} />
             <Route path="/dashreading" element={<Protectedroute Component={Dashreading} />} />
             <Route path="/dashlistening" element={<Protectedroute Component={Dashlistening} />} />
             <Route path="/dashspeaking" element={<Protectedroute Component={Dashspeaking} />} />
