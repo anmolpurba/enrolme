@@ -18,7 +18,6 @@ function Dashlistening() {
 
   return (
     <div>
-      <DashboardNav />
       <div className="container row">
         {modules.map((module)=>{
           return <Ieltscard title="Listening" url={`/dashlistening/${module.id}`} img="https://cdn-icons-png.flaticon.com/512/10048/10048853.png" />

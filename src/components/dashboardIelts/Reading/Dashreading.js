@@ -21,7 +21,6 @@ function Dashreading() {
 
   return (
     <div>
-      <DashboardNav />
       <div className="container row">
         {modules.map((module)=>{
           return <Ieltscard title="Reading" url={`/dashreading/${module.id}`} img="https://cdn-icons-png.flaticon.com/512/2436/2436636.png" />

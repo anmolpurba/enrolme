@@ -44,7 +44,7 @@ function NewDashboard(props) {
               </span>
               <a
                 style={{ color: "white", textDecoration: "none" }}
-                href="/speaking"
+                href="/dashspeaking"
               >
                 Speaking
               </a>
@@ -56,7 +56,7 @@ function NewDashboard(props) {
               </span>
               <a
                 style={{ color: "white", textDecoration: "none" }}
-                href="/writing"
+                href="/dashwriting"
               >
                 Writing
               </a>
@@ -68,7 +68,7 @@ function NewDashboard(props) {
               </span>
               <a
                 style={{ color: "white", textDecoration: "none" }}
-                href="/listening"
+                href="/dashlistening"
               >
                 Listening
               </a>
@@ -80,7 +80,7 @@ function NewDashboard(props) {
               </span>
               <a
                 style={{ color: "white", textDecoration: "none" }}
-                href="/writing"
+                href="/dashreading"
               >
                 Reading
               </a>
@@ -134,7 +134,6 @@ function NewDashboard(props) {
 
       <div className="secondcol col">
         {Component && <Component />}
-        <h1>THIS IS SECOND COL</h1>
       </div>
     </div>
   )

@@ -6,7 +6,6 @@ function Dashspeaking() {
   const [value, onChange] = useState(new Date());
   return (
     <div>
-    <DashboardNav />
       {/* <div className="calendar" style={{margin:"2rem"}}>
         <Calendar onClickDay={(event)=>{console.log(event)}} onChange={onChange} value={value} />
       </div> */}

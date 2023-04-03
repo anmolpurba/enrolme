@@ -18,7 +18,6 @@ function Dashwriting() {
 
   return (
     <div>
-      <DashboardNav />
       <div className="container row">
         {writing.map((module)=>{
           return <Ieltscard title="Writing" url={`/dashwriting/${module.id}`} img="https://cdn-icons-png.flaticon.com/512/3131/3131607.png" />
