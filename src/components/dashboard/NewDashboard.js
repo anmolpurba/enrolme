@@ -11,10 +11,11 @@ import logout from "../photos/logout.png";
 
 function NewDashboard(props) {
   const {Component} = props
+
   function handleLogout(){
     localStorage.removeItem('token');
     window.location.reload(true);
-}
+  }
   return (
     <div className="row">
       <div className="firstcol col-2">
@@ -94,7 +95,7 @@ function NewDashboard(props) {
               </span>
               <a
                 style={{ color: "white", textDecoration: "none" }}
-                href="/feedback"
+                href="/contact"
               >
                 Feedback
               </a>

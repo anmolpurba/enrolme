@@ -63,9 +63,10 @@ function Writing1() {
     }
 
   return (
-    <>
-    <ToastContainer />
+    <div style={{position:"fixed",overflowY:"scroll",height:"42rem"}}>
+    
     <div className='row'>
+        <ToastContainer />
         <div className="col" style={{padding:"5rem"}}>
             <h2 style={{fontSize: "32px",fontWeight:"bold",color: "#faaa5a"}}>Writing Task 1</h2>
             <p class="parawriting">You should spend about <strong>20 minutes</strong> on this task.</p>
@@ -124,7 +125,7 @@ function Writing1() {
             <button onClick={submitTask} style={{color:"white",backgroundColor:"#284664"}} type="button" class="btn btn-secondary"> <span><i class="fa-solid fa-paper-plane"></i></span> Submit the Test</button>
         </div>
     </div>
-    </>
+    </div>
   )
 }
 

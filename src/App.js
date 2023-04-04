@@ -36,8 +36,8 @@ function App() {
           <Routes>
             <Route path="/" element={<><Navbar /> <Banner /> <Footer/></>} />
             <Route path="/institution" element={<> <Navbar /> <Institution /> </>} />
-            <Route path="/contact" element={<><Navbar /><Contact /></>} />
-            {/* <Route path="/contact" element={<Protectedroute Component={Contact} />} /> */}
+            {/* <Route path="/contact" element={<><Navbar /><Contact /></>} /> */}
+            <Route path="/contact" element={<Protectedroute Component={Contact} />} />
             <Route path="/about" element={<><Navbar /><About /></>} />
             <Route path="/ielts" element={<><Navbar /><Ielts /></>} />
             <Route path="/reading" element={<><Navbar /> <Reading/> </>} />
