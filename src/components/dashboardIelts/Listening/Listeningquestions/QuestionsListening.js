@@ -9,6 +9,8 @@ import Axios from "axios"
 import Table from './Table'
 import Summary from './Summary'
 import Diagram from './Diagram'
+import "../../../spinner/spinner.css"
+
 
 function QuestionsListening() {
                                                                                                                                                    
@@ -106,7 +108,7 @@ function QuestionsListening() {
 
   return (
     <div>
-        {obj.length>0 && obj.map((param)=>{ 
+        {obj.length===0?<span class="loader"></span>:obj.map((param)=>{ 
             return blan(param);
         })}
     </div>

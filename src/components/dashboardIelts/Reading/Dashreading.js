@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import DashboardNav from '../../dashboardNavbar/DashboardNav'
 import Axios from "axios"
 import Ieltscard from '../../ielts/Ieltscard';
+import "../../spinner/spinner.css"
 
 
 function Dashreading() {
@@ -22,7 +23,7 @@ function Dashreading() {
   return (
     <div>
       <div className="container row">
-        {modules.map((module)=>{
+        {modules.length==0?<span class="loader"></span>:modules.map((module)=>{
           return <Ieltscard title="Reading" url={`/dashreading/${module.id}`} img="https://cdn-icons-png.flaticon.com/512/2436/2436636.png" />
         })}
       </div>

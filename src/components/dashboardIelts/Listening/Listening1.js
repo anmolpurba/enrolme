@@ -5,6 +5,7 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import "./Listening1.css"
 import ReactCountdownClock from "react-countdown-clock"
+import "../../spinner/spinner.css"
 
 
 
@@ -84,7 +85,7 @@ function Listening1() {
 
   return (
     <div>
-
+        {listen.length===0?<span class="loader"></span>:<div>
         <div className="row" style={{position:"fixed"}}>
             {/* audio and questions */}
             <div className='col-8 container' style={{padding:"2rem",overflowY:"scroll",height: "42rem"}}>
@@ -112,18 +113,19 @@ function Listening1() {
 
                 {/* for submit button */}
                 <div className="container">
-                    <div className='convertToInline' style={{float:"left"}}>
+                    
+                    <div style={{float:"left"}}>
+                        <button type="button" onClick={onSubmit} class="btn" style={{backgroundColor:"#f3f3f3"}}><i class="fa-solid fa-paper-plane"></i> Submit</button>
+                        <button type="button" onClick={()=>{SetshowAnswers(!showAnswers)}} class="btn" style={{backgroundColor:"#f3f3f3",marginLeft:"1rem"}}>{showAnswers?<><i class="fa-solid fa-cubes-stacked"></i>HIDE ANSWERS</>:<><i class="fa-solid fa-cubes-stacked"></i>SHOW ANSWERS</>}</button>
+                    </div>
+
+                    <div className='convertToInline' style={{float:"right"}}>
                         <ReactCountdownClock 
                         seconds={2400}
                         color="#f3f3f3"
                         alpha={0.9}
-                        size={150}
+                        size={80}
                         />
-                    </div>
-                    
-                    <div style={{float:"right"}}>
-                        <button type="button" onClick={onSubmit} class="btn" style={{backgroundColor:"#f3f3f3"}}><i class="fa-solid fa-paper-plane"></i> Submit</button>
-                        <button type="button" onClick={()=>{SetshowAnswers(!showAnswers)}} class="btn" style={{backgroundColor:"#f3f3f3",marginLeft:"1rem"}}>{showAnswers?<><i class="fa-solid fa-cubes-stacked"></i>HIDE ANSWERS</>:<><i class="fa-solid fa-cubes-stacked"></i>SHOW ANSWERS</>}</button>
                     </div>
 
                 </div>
@@ -141,7 +143,7 @@ function Listening1() {
         </div>
 
         
-        
+        </div>}
     </div>
   )
 }

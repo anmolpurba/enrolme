@@ -8,6 +8,8 @@ import ChooseCorrectMultiple from './ChooseCorrectMultiple'
 import CorrectParagraph from './CorrectParagraph'
 import Summary from './Summary'
 import Axios from "axios"
+import "../../../spinner/spinner.css"
+
 
 function Questions() {
                                                                                                                                                    
@@ -106,7 +108,7 @@ function Questions() {
 
   return (
     <div>
-        {obj.length>0 && obj.map((param)=>{ 
+        {obj.length===0?<span class="loader"></span>:obj.map((param)=>{ 
             return blan(param);
         })}
     </div>

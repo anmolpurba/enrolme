@@ -4,6 +4,7 @@ import { Document, Page } from 'react-pdf';
 import "./Reading1.css"
 import ReactMarkdown from "react-markdown"
 import Questions from '../Readingquestions/Questions';
+import "../../../spinner/spinner.css"
 
 
 function Reading1() {
@@ -73,30 +74,31 @@ function Reading1() {
 
   return (  
     <div> 
-        <div className="row" style={{position:"fixed"}}>
-            <div className="col" style={{textAlign:"justify",backgroundColor:"#d7e6dc",margin:"1.5rem",overflowY:"scroll",height: "42rem"}}>
-                <ReactMarkdown>
-                    {read}
-                </ReactMarkdown>
-            </div>
-            <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
-                <Questions />
-                <button type="button" onClick={onSubmit} class="btn" style={{backgroundColor:"#327846",color:"white"}}>SUBMIT</button>
-                <button type="button" onClick={()=>{SetshowAnswers(!showAnswers)}} class="btn" style={{backgroundColor:"#327846",color:"white",marginLeft:"1rem"}}>{showAnswers?<>HIDE ANSWERS</>:<>SHOW ANSWERS</>}</button>
-            </div>
+        {answers.length===0?<span class="loader"></span>:<div>
+            <div className="row" style={{position:"fixed"}}>
+                <div className="col" style={{textAlign:"justify",backgroundColor:"#d7e6dc",margin:"1.5rem",overflowY:"scroll",height: "42rem"}}>
+                    <ReactMarkdown>
+                        {read}
+                    </ReactMarkdown>
+                </div>
+                <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
+                
+                    {<Questions />}
+                    <button type="button" onClick={onSubmit} class="btn" style={{backgroundColor:"#327846",color:"white"}}>SUBMIT</button>
+                    <button type="button" onClick={()=>{SetshowAnswers(!showAnswers)}} class="btn" style={{backgroundColor:"#327846",color:"white",marginLeft:"1rem"}}>{showAnswers?<>HIDE ANSWERS</>:<>SHOW ANSWERS</>}</button>
+                </div>
 
-            {/* logic to show answers when button is clicked */}
-            {showAnswers?
-            <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
-                <h1>Answers</h1>
-                {answers.map((ans)=>{
-                    return <p> <span style={{backgroundColor:"#327846",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{ans.attributes.sr}</span> {ans.attributes.answer} </p>
-                })}
+                {/* logic to show answers when button is clicked */}
+                {showAnswers?
+                <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
+                    <h1>Answers</h1>
+                    {answers.map((ans)=>{
+                        return <p> <span style={{backgroundColor:"#327846",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{ans.attributes.sr}</span> {ans.attributes.answer} </p>
+                    })}
+                </div>
+                :null}        
             </div>
-            :null}
-            
-                        
-        </div>
+        </div>}
     </div> 
             
     
