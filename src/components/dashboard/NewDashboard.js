@@ -9,6 +9,7 @@ import feedback from "../photos/feedback.png";
 import contact from "../photos/contact.png";
 import logout from "../photos/logout.png";
 
+
 function NewDashboard(props) {
   const {Component} = props
 
