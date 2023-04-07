@@ -93,11 +93,14 @@ function Signup() {
                                 </div>
                             </div>
 
-                            
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <a href="/signin" className='create-btn' style={{margin:"0 0 0 1.5rem"}}>Already Have a Account?</a>
+                            </div>
+
 
 
                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                               <button onClick={handleSubmit} class="btn btn-primary btn-lg">Register</button>
+                               <button onClick={handleSubmit} style={{backgroundColor:"#2669bf",color:"white"}} class="btn btn-lg">Register</button>
                             </div>
 
                         </form>

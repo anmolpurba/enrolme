@@ -10,6 +10,7 @@ import Table from './Table'
 import Summary from './Summary'
 import Diagram from './Diagram'
 import "../../../spinner/spinner.css"
+import Blanks from './Blanks'
 
 
 function QuestionsListening() {
@@ -53,15 +54,18 @@ function QuestionsListening() {
         if(param.attributes.questionType==="Table3" && param.attributes.heading!=null){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
+        if(param.attributes.questionType==="blanks" && param.attributes.heading!=null){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Blanks id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
+        }
         if(param.attributes.questionType==="diagram"){
             // {console.log(param.attributes.diagramImage.data)}
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram option={param.attributes.options} id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram2"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram option={param.attributes.options} id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram3"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram option={param.attributes.options} id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="ChooseCorrect"){
             {console.log(param.attributes.questionText)}
