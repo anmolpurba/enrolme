@@ -16,11 +16,10 @@ function Listening1() {
 
     function onSubmit(event){
         event.preventDefault();
+        console.log("ccc")
         let inputArr = [];
         let answerArr = [];
         let incorrect = [];
-        console.log(inputArr)
-        console.log(answerArr)
         //for getting all the answers that user puts in the input tag
         for(var i=0;i<40;i++){
             inputArr.push(document.getElementsByClassName('userInput')[i].value)
@@ -29,6 +28,7 @@ function Listening1() {
         //for getting all the answers putted in content type with questions
         for(var i=0;i<answers.length;i++){
             answerArr.push(answers[i].attributes.answer)
+            console.log(answers[i].attributes.answer)
         }
 
         console.log(inputArr)
