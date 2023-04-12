@@ -54,7 +54,7 @@ function QuestionsListening() {
         if(param.attributes.questionType==="Table3" && param.attributes.heading!=null){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Table id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
-        if(param.attributes.questionType==="blanks" && param.attributes.heading!=null){
+        if(param.attributes.questionType==="blanks"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Blanks id={param.attributes.sr} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="diagram"){

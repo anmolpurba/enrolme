@@ -14,6 +14,9 @@ function Listening1() {
     const [answers,Setanswers] = useState([]);
     const [showAnswers,SetshowAnswers] = useState(false);
 
+    //useState for when submit button is clicked then col-8 will be removed
+    const [col8,Setcol8] = useState(false);
+
     function onSubmit(event){
         event.preventDefault();
         console.log("ccc")
@@ -43,6 +46,11 @@ function Listening1() {
             }
         }
         alert("YOUR SCORE IS:"+count+"/40 "+ "\n" +"INCORRECT ANSWERS: "+incorrect)
+    }
+
+    function showAnswersOnClick(){
+        Setcol8(!col8);
+        SetshowAnswers(!showAnswers);
     }
 
 
@@ -88,7 +96,7 @@ function Listening1() {
         {listen.length===0?<span class="loader"></span>:<div>
         <div className="row" style={{position:"fixed"}}>
             {/* audio and questions */}
-            <div className='col-8 container' style={{padding:"2rem",overflowY:"scroll",height: "42rem"}}>
+            <div className={`${col8==false?"col-8":"col"}`} style={{padding:"2rem",overflowY:"scroll",height: "42rem"}}>
                 <AudioPlayer
                     className='audio'
                     style={{backgroundColor:"#d6f0f4",border:"1px solid #32b3c7",width:"90%"}}
@@ -116,7 +124,7 @@ function Listening1() {
                     
                     <div style={{float:"left"}}>
                         <button type="button" onClick={onSubmit} class="btn" style={{backgroundColor:"#f3f3f3"}}><i class="fa-solid fa-paper-plane"></i> Submit</button>
-                        <button type="button" onClick={()=>{SetshowAnswers(!showAnswers)}} class="btn" style={{backgroundColor:"#f3f3f3",marginLeft:"1rem"}}>{showAnswers?<><i class="fa-solid fa-cubes-stacked"></i>HIDE ANSWERS</>:<><i class="fa-solid fa-cubes-stacked"></i>SHOW ANSWERS</>}</button>
+                        <button type="button" onClick={()=>{showAnswersOnClick()}} class="btn" style={{backgroundColor:"#f3f3f3",marginLeft:"1rem"}}>{showAnswers?<><i class="fa-solid fa-cubes-stacked"></i>HIDE ANSWERS</>:<><i class="fa-solid fa-cubes-stacked"></i>SHOW ANSWERS</>}</button>
                     </div>
 
                     <div className='convertToInline' style={{float:"right"}}>
