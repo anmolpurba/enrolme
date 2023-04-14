@@ -9,7 +9,7 @@ function Ieltscard(props) {
       <div class="box box-down cyan">
         <h2><Link to={props.url}>{props.title}</Link></h2>
         <p>IELTS MODULE</p>
-        <img style={{display:"block",height:"9rem"}} src={props.img} alt="" />
+        <img style={{display:"block",height:"5rem"}} src={props.img} alt="" />
       </div>
     </div>
     </div>

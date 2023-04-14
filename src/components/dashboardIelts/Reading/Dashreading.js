@@ -42,11 +42,12 @@ function Dashreading() {
   return (
     <div>
       <div className="container row">
-        {currentItems.length > 0 && currentItems.map((module)=>{
+        {currentItems.length == 0?<span class="loader"></span> : currentItems.map((module)=>{
           return <Ieltscard title="Reading" url={`/dashreading/${module.id}`} img="https://cdn-icons-png.flaticon.com/512/2436/2436636.png" />
         })}
         
         <ReactPaginate
+
           breakLabel="..."
           nextLabel="next >"
           onPageChange={handlePageClick}
