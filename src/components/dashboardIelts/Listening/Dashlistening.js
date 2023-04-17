@@ -14,9 +14,10 @@ function Dashlistening() {
   const [pageCount,SetpageCount] = useState(0);
   const [itemOffset, SetitemOffset]  = useState(0);
   const itemsPerPage = 6;
+  // console.log(process.env);
 
   useEffect(()=>{
-    Axios.get("http://localhost:1337/api/listenings").then((response)=>{
+    Axios.get(`${process.env.REACT_APP_STRAPI_API}/api/listenings`).then((response)=>{
       Setmodules(response.data.data)
       console.log(response.data.data)
     }).catch((err)=>{

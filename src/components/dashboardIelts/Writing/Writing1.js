@@ -18,7 +18,7 @@ function Writing1() {
 
     useEffect(()=>{
         
-        Axios.get(`http://localhost:1337/api/writings/${link}/?populate=*`)
+        Axios.get(`${process.env.REACT_APP_STRAPI_API}/api/writings/${link}/?populate=*`)
         .then(response => {
             Setwriting(response.data.data.attributes);
             // console.log(response.data.data.attributes);
@@ -30,7 +30,7 @@ function Writing1() {
     },[])
 
     function submitTask(){
-        Axios.post("http://localhost:1337/api/writing-answers", {
+        Axios.post(`${process.env.REACT_APP_STRAPI_API}/api/writing-answers`, {
                 data: {
                 studentEmail:document.getElementById("studentEmail").value,
                 task1:document.getElementById("task1").value,
@@ -75,7 +75,7 @@ function Writing1() {
                     <p class="parawriting">You should spend about <strong>20 minutes</strong> on this task.</p>
                     <p class="parawriting">{writing.questionText1}</p>
                     <p class="parawriting">You should write <strong>at least 150 words.</strong></p>
-                    <img src={writing && `http://localhost:1337${writing.diagramImage.data[0].attributes.formats.medium.url}`} alt="" />
+                    <img src={writing && `${process.env.REACT_APP_STRAPI_API}${writing.diagramImage.data[0].attributes.formats.medium.url}`} alt="" />
                     <ReactCountdownClock seconds={1200}
                             color="#faaa5a"
                             alpha={0.9}

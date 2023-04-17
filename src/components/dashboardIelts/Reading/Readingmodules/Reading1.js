@@ -45,7 +45,7 @@ function Reading1() {
 
     useEffect(()=>{
         var link = document.location.href.split('/')[4];
-        Axios.get(`http://localhost:1337/api/readings/${link}`)
+        Axios.get(`${process.env.REACT_APP_STRAPI_API}/api/readings/${link}`)
         .then(response => {
             Setread(response.data.data.attributes.text);
             // console.log(response.data.data.attributes.text);
@@ -55,7 +55,7 @@ function Reading1() {
         });
         
         //to get answers of all questions 
-        Axios.get(`http://localhost:1337/api/readings/${link}?populate[questions][populate]=*`).then((response)=>{
+        Axios.get(`${process.env.REACT_APP_STRAPI_API}/api/readings/${link}?populate[questions][populate]=*`).then((response)=>{
             Setanswers(response.data.data.attributes.questions.data);
             // console.log(response.data.data.attributes.questions.data);
         }).catch((err)=>{

@@ -18,7 +18,7 @@ function Dashwriting() {
 
 
   useEffect(()=>{
-    Axios.get("http://localhost:1337/api/writings").then((response)=>{
+    Axios.get(`${process.env.REACT_APP_STRAPI_API}/api/writings`).then((response)=>{
       Setwriting(response.data.data)
       console.log(response.data.data)
     }).catch((err)=>{

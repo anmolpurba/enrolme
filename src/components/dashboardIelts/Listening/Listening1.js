@@ -72,7 +72,7 @@ function Listening1() {
 
     useEffect(()=>{
         
-        Axios.get(`http://localhost:1337/api/listenings/${link}/?populate=*`)
+        Axios.get(`${process.env.REACT_APP_STRAPI_API}/api/listenings/${link}/?populate=*`)
         .then(response => {
             Setlisten(response.data.data.attributes.audio.data[0].attributes.url);
             console.log(response.data.data.attributes.audio.data[0].attributes.url);
@@ -82,7 +82,7 @@ function Listening1() {
         })
 
         //to get answers of all questions 
-        Axios.get(`http://localhost:1337/api/listenings/${link}/?populate=listening_questions.diagramImage.media`).then((response)=>{
+        Axios.get(`${process.env.REACT_APP_STRAPI_API}/api/listenings/${link}/?populate=listening_questions.diagramImage.media`).then((response)=>{
             Setanswers(response.data.data.attributes.listening_questions.data);
             // console.log(response.data.data.attributes.listening_questions.data);
         }).catch((err)=>{
@@ -100,7 +100,7 @@ function Listening1() {
                 <AudioPlayer
                     className='audio'
                     style={{backgroundColor:"#d6f0f4",border:"1px solid #32b3c7",width:"90%"}}
-                    src={`http://localhost:1337${listen}`}
+                    src={`${process.env.REACT_APP_STRAPI_API}${listen}`}
                 />
                 
                 {/* questionsListening */}

@@ -18,7 +18,7 @@ function Dashreading() {
   const itemsPerPage = 6;
 
   useEffect(()=>{
-    Axios.get("http://localhost:1337/api/readings").then((response)=>{
+    Axios.get(`${process.env.REACT_APP_STRAPI_API}/api/readings`).then((response)=>{
       Setmodules(response.data.data)
       // console.log(response.data.data)
     }).catch((err)=>{
