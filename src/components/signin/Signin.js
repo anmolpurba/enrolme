@@ -13,7 +13,7 @@ function Signin() {
     
     function handleSubmit(event){
         event.preventDefault();
-        Axios.post('http://localhost:1337/api/auth/local', {
+        Axios.post(`${process.env.REACT_APP_STRAPI_API}/api/auth/local`, {
             identifier: email,
             password: password,
         },)
@@ -36,7 +36,7 @@ function Signin() {
 
     function forgot(event){
         event.preventDefault();
-        Axios.post('http://localhost:1337/api/auth/forgot-password', {
+        Axios.post(`${process.env.REACT_APP_STRAPI_API}/api/auth/forgot-password`, {
             email:email
         },)
         .then(response => {

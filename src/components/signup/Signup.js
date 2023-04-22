@@ -16,7 +16,7 @@ function Signup() {
     function handleSubmit(event){
         event.preventDefault();
         //for registering users ------------
-        Axios.post('http://localhost:1337/api/auth/local/register', {
+        Axios.post(`${process.env.REACT_APP_STRAPI_API}/api/auth/local/register`, {
             username: username,
             email: email,
             password: password,

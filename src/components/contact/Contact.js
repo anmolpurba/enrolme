@@ -11,7 +11,7 @@ function Contact() {
     const [message,Setmessage] = useState("");
 
     function handleSubmit(){
-        Axios.post(`${process.env.REACT_APP_STRAPI_API}/api/feedbacks`, {
+        Axios.post("http://localhost:1337/api/feedbacks", {
             data: {
             name: name,
             number:number,
