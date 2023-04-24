@@ -17,7 +17,7 @@ function Questions() {
 
     useEffect(()=>{
         var link = document.location.href.split('/')[4];
-        Axios.get(`http://localhost:1337/api/readings/${link}?populate[questions][populate]=*`).then((response)=>{
+        Axios.get(`${process.env.REACT_APP_STRAPI_API}/api/readings/${link}?populate[questions][populate]=*`).then((response)=>{
             Setobj(response.data.data.attributes.questions.data);
             // console.log(response.data.data.attributes.questions.data);
         }).catch((err)=>{
@@ -37,13 +37,12 @@ function Questions() {
 
     function blan(param){
         if(param.attributes.questionType==="diagram"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram2"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram3"){
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `http://localhost:1337${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="TrueFalseNG"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <TrueFalseNG sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>

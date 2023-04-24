@@ -69,7 +69,7 @@ function Signin() {
 
                         <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
 
-                        <form onSubmit={handleSubmit} class="mx-1 mx-md-4">
+                        <form id = "signin-form" onSubmit={handleSubmit} class="mx-1 mx-md-4">
 
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>

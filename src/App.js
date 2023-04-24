@@ -48,7 +48,7 @@ function App() {
             <Route path="/signin" element={<> <Navbar/> <Signin/> </>} /> 
             <Route path="/forgotpassword" element={<> <Navbar/> <Resetpassword/> </>} />
             {/* <Route path="/dashboard" element={<Protectedroute Component={Dashboard} />} /> */}
-            <Route path="/dashboard" element={<Protectedroute Component={NewDashboard} />} />
+            <Route path="/dashboard" element={<Protectedroute Component={Dashspeaking} />} />
             <Route path="/dashreading" element={<Protectedroute Component={Dashreading} />} />
             <Route path="/dashlistening" element={<Protectedroute Component={Dashlistening} />} />
             <Route path="/dashspeaking" element={<Protectedroute Component={Dashspeaking} />} />

@@ -100,7 +100,7 @@ function Listening1() {
                 <AudioPlayer
                     className='audio'
                     style={{backgroundColor:"#d6f0f4",border:"1px solid #32b3c7",width:"90%"}}
-                    src={`${process.env.REACT_APP_STRAPI_API}${listen}`}
+                    src={`${listen}`}
                 />
                 
                 {/* questionsListening */}
