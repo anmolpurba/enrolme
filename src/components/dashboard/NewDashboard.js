@@ -24,9 +24,9 @@ function NewDashboard(props) {
           <img
             src={enrolme}
             style={{
-              height: "20px",
-              width: "20px",
-              margin: "0 0.6rem 0.6rem 1rem"
+              height: "34px",
+              width: "32px",
+              margin: "0 0.6rem 1rem 0rem"
             }}
             alt=""
           />

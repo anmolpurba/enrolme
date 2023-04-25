@@ -5,8 +5,9 @@
   
   .firstcol {
     background-color: rgb(35, 48, 68);
-    height: 100vh;
+    height: 98vh;
     min-width: 15rem;
+    overflow-x: hidden;
   }
   
   .enrolmediv {

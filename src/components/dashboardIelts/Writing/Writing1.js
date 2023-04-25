@@ -66,7 +66,7 @@ function Writing1() {
 
   return (
     <div>
-        {writing.length===0?<span class="loader"></span>:<div style={{position:"fixed",overflowY:"scroll",height:"42rem"}}>
+        {writing.length===0?<span class="loader"></span>:<div style={{position:"fixed",overflowY:"scroll",height:"-webkit-fill-available",overflowX:"hidden"}}>
         
             <div className='row'>
                 <ToastContainer />

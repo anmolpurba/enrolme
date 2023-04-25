@@ -94,9 +94,9 @@ function Listening1() {
   return (
     <div>
         {listen.length===0?<span class="loader"></span>:<div>
-        <div className="row" style={{position:"fixed"}}>
+        <div className="row" style={{position:"sticky"}}>
             {/* audio and questions */}
-            <div className={`${col8==false?"col-8":"col"}`} style={{padding:"2rem",overflowY:"scroll",height: "42rem"}}>
+            <div className={`${col8==false?"col-8":"col"}`} style={{padding:"2rem",overflowY:"scroll",height: "98vh"}}>
                 <AudioPlayer
                     className='audio'
                     style={{backgroundColor:"#d6f0f4",border:"1px solid #32b3c7",width:"90%"}}
@@ -104,11 +104,13 @@ function Listening1() {
                 />
                 
                 {/* questionsListening */}
-                <QuestionsListening />
+                <div><QuestionsListening /></div>
+                
+               
             </div>
 
             {/* questionpallete */}
-            <div className="col container " style={{width:"5rem",backgroundColor:"#284664",position:"sticky"}}>
+            <div className="col container " style={{width:"5rem",backgroundColor:"#284664",position:"sticky", marginTop:"0", top:"1px"}}>
                 <img style={{display:"flex",justifyContent:"center"}} src="https://ads.intergreat.com/www/images/30c9e2d53a04486eb2be804aba0fc3d9.png" />
                 <p style={{color:"white",marginTop:"0.5rem",fontSize:"22px",fontWeight:"600",display:"flex",justifyContent:"center"}}>QUESTION PALETTE</p>
 
@@ -141,7 +143,7 @@ function Listening1() {
 
             {/* logic to show answers when button is clicked */}
             {showAnswers?
-            <div className="col" style={{overflowY:"scroll",height: "42rem"}}>
+            <div className="col" style={{overflowY:"scroll",height: "98vh"}}>
                 <h1>Answers</h1>
                 {answers.map((ans)=>{
                     return <p> <span style={{backgroundColor:"#32b3c7",borderRadius:"50%",color:"#fff",textAlign:"center",height:"30px",width:"30px"}}>{ans.attributes.sr}</span> {ans.attributes.answer} </p>

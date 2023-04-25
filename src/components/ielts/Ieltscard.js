@@ -6,11 +6,13 @@ function Ieltscard(props) {
   return (
     <div className="home col">
       <div class="row1-container">
+      <Link to={props.url}>
       <div class="box box-down cyan">
-        <h2><Link to={props.url}>{props.title}</Link></h2>
+        <h2>{props.title}</h2>
         <p>IELTS MODULE</p>
         <img style={{display:"block",height:"5rem"}} src={props.img} alt="" />
       </div>
+      </Link>
     </div>
     </div>
     

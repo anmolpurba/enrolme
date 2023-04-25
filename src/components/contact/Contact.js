@@ -47,7 +47,7 @@ function Contact() {
     }
 
   return (
-    <div style={{position:"fixed",overflowY:"scroll",height:"42rem"}}>
+    <div style={{position:"fixed",overflowY:"scroll",height:"98vh",overflowX:"hidden"}}>
         <ToastContainer />
         <div class="formbold-main-wrapper">
             <div class="formbold-form-wrapper">
