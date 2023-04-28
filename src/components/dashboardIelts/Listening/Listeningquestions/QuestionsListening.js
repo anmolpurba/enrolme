@@ -59,7 +59,7 @@ function QuestionsListening() {
         }
         if(param.attributes.questionType==="diagram"){
             // {console.log(param.attributes.diagramImage.data)}
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram option={param.attributes.options} id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram option={param.attributes.options} id={param.attributes.sr} sr={param.attributes.sr} questionText={param.attributes.questionText!=null && param.attributes.questionText} image={param.attributes.diagramImage.data!=null && `${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram2"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram option={param.attributes.options} id={param.attributes.sr} sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
@@ -69,7 +69,7 @@ function QuestionsListening() {
         }
         if(param.attributes.questionType==="ChooseCorrect"){
             {console.log(param.attributes.questionText)}
-            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect id={param.attributes.sr} sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect id={param.attributes.sr} option={param.attributes.options} sr={param.attributes.sr} questionText={param.attributes.questionText} /> </>
         }
         if(param.attributes.questionType==="ChooseCorrect2"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <ChooseCorrect id={param.attributes.sr} sr={param.attributes.sr}  questionText={param.attributes.questionText} /> </>
