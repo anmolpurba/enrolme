@@ -29,6 +29,7 @@ function Signup() {
                 position: toast.POSITION.TOP_CENTER,
                 autoClose:1300
             });
+            document.getElementById("signup-form").reset();
             console.log('User profile', response.data.user);
             console.log('User token', response.data.jwt);
         })
@@ -38,9 +39,9 @@ function Signup() {
                 position: toast.POSITION.TOP_CENTER,
                 autoClose:1300
             })
+            document.getElementById("signup-form").reset();
             console.log('An error occurred:', error.response);
         });
-        document.getElementById("signup-form").reset();
     }
 
   return (

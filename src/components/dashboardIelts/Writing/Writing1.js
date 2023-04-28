@@ -75,7 +75,7 @@ function Writing1() {
                     <p class="parawriting">You should spend about <strong>20 minutes</strong> on this task.</p>
                     <p class="parawriting">{writing.questionText1}</p>
                     <p class="parawriting">You should write <strong>at least 150 words.</strong></p>
-                    <img src={writing && `${writing.diagramImage.data[0].attributes.formats.thumbnail.url}`} alt="" />
+                    <img src={writing && `${writing.diagramImage.data[0].attributes.url}`} alt="" />
                     <ReactCountdownClock seconds={1200}
                             color="#faaa5a"
                             alpha={0.9}

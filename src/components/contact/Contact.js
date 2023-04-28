@@ -12,7 +12,7 @@ function Contact() {
 
     function handleSubmit(){
         Axios.post(`${process.env.REACT_APP_STRAPI_API}/api/feedbacks`, {
-            data: {
+            "data": {
             name: name,
             number:number,
             email: email,

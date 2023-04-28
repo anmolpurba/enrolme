@@ -37,7 +37,9 @@ function Signin() {
     function forgot(event){
         event.preventDefault();
         Axios.post(`${process.env.REACT_APP_STRAPI_API}/api/auth/forgot-password`, {
-            email:email
+            "data":{
+                email:email
+            }
         },)
         .then(response => {
             toast.success("Check your email for OTP to change Password", {

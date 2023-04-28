@@ -38,7 +38,7 @@ function Signin() {
         let searchParams = new URLSearchParams(window.location.search);
         let param = searchParams.get('code');
 
-        Axios.post('http://localhost:1337/api/auth/reset-password', {
+        Axios.post(`${process.env.REACT_APP_STRAPI_API}/api/auth/reset-password`, {
             password: password,
             passwordConfirmation:confirmpassword,
             code:param

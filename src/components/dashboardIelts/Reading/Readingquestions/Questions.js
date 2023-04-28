@@ -7,6 +7,7 @@ import ChooseCorrect from './ChooseCorrect'
 import ChooseCorrectMultiple from './ChooseCorrectMultiple'
 import CorrectParagraph from './CorrectParagraph'
 import Summary from './Summary'
+import SummaryChooseCorrect from './SummaryChooseCorrect'
 import Axios from "axios"
 import "../../../spinner/spinner.css"
 
@@ -37,8 +38,6 @@ function Questions() {
 
     function blan(param){
         if(param.attributes.questionType==="diagram"){
-        }
-        if(param.attributes.questionType==="diagram2"){
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Diagram sr={param.attributes.sr} image={param.attributes.diagramImage.data!=null && `${param.attributes.diagramImage.data[0].attributes.formats.small.url}`} /> </>
         }
         if(param.attributes.questionType==="diagram3"){
@@ -100,6 +99,9 @@ function Questions() {
         }
         if(param.attributes.questionType==="summary3"){ 
             return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <Summary sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText} summaryInput={param.attributes.summaryInput} /> </>
+        }
+        if(param.attributes.questionType==="SummaryChooseCorrect"){
+            return <> {param.attributes.heading&&<h4>{param.attributes.heading}</h4>} <SummaryChooseCorrect option={param.attributes.options} sr={param.attributes.sr} srEnd={param.attributes.srEnd} questionText={param.attributes.questionText!=null && param.attributes.questionText} /> </>
         }
         
     }
